@@ -153,12 +153,14 @@ interface CategoryCardProps {
 
 const CategoryCard: React.FC<CategoryCardProps> = ({ title, icon, description }) => {
   return (
-    <div className="flex flex-col items-center text-center p-6 rounded-lg bg-white shadow-sm border border-tea-yellow/10 hover:border-tea-yellow/30 transition-all hover:shadow-md">
-      <div className="mb-4 text-tea-green">
+    <div className="flex flex-col items-center text-center p-6 rounded-lg bg-white shadow-sm border border-tea-yellow/10 
+      hover:border-tea-yellow/60 transition-all duration-300 hover:shadow-md hover:shadow-tea-yellow/20 
+      hover:-translate-y-2 transform-gpu animate-float cursor-pointer group">
+      <div className="mb-4 text-tea-green group-hover:scale-110 transition-transform duration-300">
         {icon}
       </div>
-      <h3 className="font-medium text-tea-green mb-1">{title}</h3>
-      <p className="text-sm text-muted-foreground">{description}</p>
+      <h3 className="font-medium text-tea-green mb-1 group-hover:text-tea-green/90">{title}</h3>
+      <p className="text-sm text-muted-foreground group-hover:text-muted-foreground/90">{description}</p>
     </div>
   );
 };
