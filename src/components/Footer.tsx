@@ -1,17 +1,26 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import { Instagram, Twitter, Facebook, Mail, Phone } from "lucide-react";
+import { Instagram, Twitter, Facebook, Mail, Phone, Coffee, CupSoda } from "lucide-react";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-secondary pt-16 pb-8">
+    <footer className="bg-tea-green text-primary-foreground pt-16 pb-8">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           <div className="space-y-4">
-            <h3 className="font-serif text-xl font-medium">Engada Spot</h3>
-            <p className="text-muted-foreground max-w-xs">
-              Curating exceptional products with meticulous attention to detail and quality.
+            <div className="flex items-center space-x-3">
+              <div className="h-10 w-10 bg-tea-yellow rounded-lg overflow-hidden">
+                <img 
+                  src="/lovable-uploads/fc15208b-e0a1-43cb-aa71-427832095d2a.png" 
+                  alt="Engada Spot Logo" 
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <h3 className="font-serif text-xl font-medium">Engada Spot</h3>
+            </div>
+            <p className="text-tea-yellow/90 max-w-xs">
+              Serving aromatic teas, coffee delights, savory rolls, and sweet treats with love and passion.
             </p>
             <div className="flex space-x-4">
               <SocialLink href="#" icon={<Instagram size={18} />} label="Instagram" />
@@ -21,21 +30,21 @@ const Footer: React.FC = () => {
           </div>
           
           <div className="space-y-4">
-            <h4 className="font-serif text-lg font-medium">Navigate</h4>
+            <h4 className="font-serif text-lg font-medium text-tea-yellow">Navigate</h4>
             <nav className="flex flex-col space-y-2">
               <FooterLink to="/" label="Home" />
-              <FooterLink to="/products" label="Products" />
+              <FooterLink to="/products" label="Menu" />
               <FooterLink to="/about" label="About" />
               <FooterLink to="/contact" label="Contact" />
             </nav>
           </div>
           
           <div className="space-y-4">
-            <h4 className="font-serif text-lg font-medium">Contact</h4>
-            <div className="space-y-2 text-muted-foreground">
+            <h4 className="font-serif text-lg font-medium text-tea-yellow">Contact</h4>
+            <div className="space-y-2 text-primary-foreground/90">
               <div className="flex items-center space-x-3">
                 <Mail size={16} />
-                <span>contact@engadaspot.com</span>
+                <span>hello@engadaspot.com</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone size={16} />
@@ -45,7 +54,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
         
-        <div className="mt-16 pt-8 border-t border-border text-center text-sm text-muted-foreground">
+        <div className="mt-16 pt-8 border-t border-tea-yellow/20 text-center text-sm text-primary-foreground/70">
           <p>© {new Date().getFullYear()} Engada Spot. All rights reserved.</p>
         </div>
       </div>
@@ -64,7 +73,7 @@ const SocialLink: React.FC<SocialLinkProps> = ({ href, icon, label }) => {
     <a 
       href={href}
       aria-label={label}
-      className="w-8 h-8 flex items-center justify-center rounded-full bg-background text-muted-foreground hover:text-primary hover:bg-background/80 transition-colors"
+      className="w-8 h-8 flex items-center justify-center rounded-full bg-tea-yellow text-tea-green hover:bg-tea-yellow/80 transition-colors"
     >
       {icon}
     </a>
@@ -80,7 +89,7 @@ const FooterLink: React.FC<FooterLinkProps> = ({ to, label }) => {
   return (
     <Link 
       to={to}
-      className="text-muted-foreground hover:text-primary transition-colors"
+      className="text-primary-foreground/80 hover:text-tea-yellow transition-colors"
     >
       {label}
     </Link>

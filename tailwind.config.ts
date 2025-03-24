@@ -62,6 +62,10 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				tea: {
+					green: '#0E9B76', // Teal green from logo
+					yellow: '#FFC947' // Yellow from logo
 				}
 			},
 			borderRadius: {

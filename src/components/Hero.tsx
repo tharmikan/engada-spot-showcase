@@ -1,6 +1,6 @@
 
 import React from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, CupSoda } from "lucide-react";
 import { Link } from "react-router-dom";
 
 interface HeroProps {
@@ -22,7 +22,7 @@ const Hero: React.FC<HeroProps> = ({
     <section className="relative h-screen flex items-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-black/30 z-10"></div>
+        <div className="absolute inset-0 bg-tea-green/30 z-10"></div>
         <img 
           src={imageSrc} 
           alt="Hero background" 
@@ -42,7 +42,7 @@ const Hero: React.FC<HeroProps> = ({
           </p>
           <Link
             to={ctaLink}
-            className="inline-flex items-center px-8 py-3 text-base font-medium text-white bg-primary hover:bg-primary/90 rounded-md transition-colors group"
+            className="inline-flex items-center px-8 py-3 text-base font-medium text-tea-green bg-tea-yellow hover:bg-tea-yellow/90 rounded-md transition-colors group"
           >
             {ctaText}
             <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />

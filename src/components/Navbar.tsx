@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Coffee, CupSoda } from "lucide-react";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,14 +36,21 @@ const Navbar: React.FC = () => {
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center space-x-2">
-            <span className="font-serif text-xl font-semibold tracking-tight">Engada Spot</span>
+          <Link to="/" className="flex items-center space-x-3">
+            <div className="h-10 w-10 bg-tea-green rounded-lg overflow-hidden">
+              <img 
+                src="/lovable-uploads/fc15208b-e0a1-43cb-aa71-427832095d2a.png" 
+                alt="Engada Spot Logo" 
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <span className="font-serif text-xl font-semibold tracking-tight text-tea-green">Engada Spot</span>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-10">
             <NavLink to="/" label="Home" />
-            <NavLink to="/products" label="Products" />
+            <NavLink to="/products" label="Menu" />
             <NavLink to="/about" label="About" />
             <NavLink to="/contact" label="Contact" />
           </div>
@@ -63,7 +70,7 @@ const Navbar: React.FC = () => {
       >
         <div className="flex flex-col space-y-6 items-center text-lg font-medium">
           <NavLink to="/" label="Home" mobile />
-          <NavLink to="/products" label="Products" mobile />
+          <NavLink to="/products" label="Menu" mobile />
           <NavLink to="/about" label="About" mobile />
           <NavLink to="/contact" label="Contact" mobile />
         </div>
