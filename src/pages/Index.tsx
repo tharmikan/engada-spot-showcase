@@ -13,7 +13,7 @@ const Index: React.FC = () => {
     <>
       <Hero 
         title="Premium Tea & Snacks"
-        subtitle="Experience the perfect blend of traditional flavors and modern comfort at Engada Spot."
+        subtitle="Experience the perfect blend of traditional flavors and traditional comfort at Engada Spot."
         imageSrc="https://images.unsplash.com/photo-1547825407-2d060104b7f8?auto=format&fit=crop&q=80&w=1920"
         ctaLink="/products"
         ctaText="Explore Our Menu"
