@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Hero from "@/components/Hero";
 import ProductCard from "@/components/ProductCard";
 import { getFeaturedProducts } from "@/lib/products";
-import { ArrowRight, CupSoda, Coffee, Leaf, Utensils, CakeSlice } from "lucide-react";
+import { ArrowRight, CupSoda, Coffee, Utensils, CakeSlice, Soup } from "lucide-react";
 
 const Index: React.FC = () => {
   const featuredProducts = getFeaturedProducts();
@@ -19,6 +19,11 @@ const Index: React.FC = () => {
         ctaText="Explore Our Menu"
       />
       
+      {/* Opening Hours Banner */}
+      <div className="bg-tea-green text-white py-3 text-center">
+        <p className="text-lg font-medium">Open Daily from 4:00 PM - 12:00 PM</p>
+      </div>
+      
       {/* Categories Section */}
       <section className="py-12 md:py-20 bg-tea-yellow/20">
         <div className="container mx-auto container-padding">
@@ -26,22 +31,22 @@ const Index: React.FC = () => {
             <CategoryCard 
               title="Tea Varieties" 
               icon={<CupSoda className="h-8 w-8" />} 
-              description="Aromatic & Refreshing"
+              description="Masala Chai, Cardamom Chai, Ginger Plain Tea"
             />
             <CategoryCard 
-              title="Coffee" 
-              icon={<Coffee className="h-8 w-8" />}
-              description="Bold & Energizing"
-            />
-            <CategoryCard 
-              title="Savory Rolls" 
+              title="Rolls Varieties" 
               icon={<Utensils className="h-8 w-8" />}
-              description="Fresh & Filling"
+              description="Vegetable, Chicken, Fish Rolls"
             />
             <CategoryCard 
-              title="Desserts" 
+              title="Spot Cake Varieties" 
               icon={<CakeSlice className="h-8 w-8" />}
-              description="Sweet & Delightful"
+              description="Badam, Mango, Rose Milk Flavors"
+            />
+            <CategoryCard 
+              title="Chips Varieties" 
+              icon={<Soup className="h-8 w-8" />}
+              description="Cassava Chips & More"
             />
           </div>
         </div>
