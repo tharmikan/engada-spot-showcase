@@ -19,6 +19,10 @@ const Index: React.FC = () => {
           // Staggered animation delay based on index
           setTimeout(() => {
             entry.target.classList.add('animate-slide-in');
+            // Add continuous moving animation class after slide-in
+            setTimeout(() => {
+              entry.target.classList.add('animate-side-float');
+            }, 800);
           }, index * 150);
         }
       });
@@ -181,14 +185,14 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ title, icon, description, i
     <div 
       className={`category-card flex flex-col items-center text-center p-6 rounded-lg bg-white shadow-sm 
         border border-tea-yellow/10 hover:border-tea-yellow/60 transition-all duration-300 
-        hover:shadow-md hover:shadow-tea-yellow/20 hover:-translate-y-2 transform-gpu 
+        hover:shadow-md hover:shadow-tea-yellow/20 hover:scale-95 transform-gpu 
         animate-float cursor-pointer group opacity-0 -translate-x-full`}
       style={{ 
         animationDelay: `${index * 150}ms`,
         animationFillMode: 'forwards'
       }}
     >
-      <div className="mb-4 text-tea-green group-hover:scale-110 transition-transform duration-300">
+      <div className="mb-4 text-tea-green group-hover:rotate-12 transition-transform duration-300">
         {icon}
       </div>
       <h3 className="font-medium text-tea-green mb-1 group-hover:text-tea-green/90">{title}</h3>

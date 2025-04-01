@@ -156,4 +156,9 @@
     position: relative;
     z-index: 2;
   }
+  
+  /* Add continuous side-motion animation class */
+  .animate-side-float {
+    animation: side-float 3s ease-in-out infinite;
+  }
 }
