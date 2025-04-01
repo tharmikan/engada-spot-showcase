@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Hero from "@/components/Hero";
@@ -21,7 +20,10 @@ const Index: React.FC = () => {
             entry.target.classList.add('animate-slide-in');
             // Add continuous moving animation class after slide-in
             setTimeout(() => {
-              entry.target.classList.add('animate-side-float');
+              // Alternate between different animations for visual variety
+              const animations = ['animate-side-float', 'animate-wave-motion', 'animate-pulse-grow'];
+              const animationClass = animations[index % animations.length];
+              entry.target.classList.add(animationClass);
             }, 800);
           }, index * 150);
         }
@@ -184,19 +186,19 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ title, icon, description, i
   return (
     <div 
       className={`category-card flex flex-col items-center text-center p-6 rounded-lg bg-white shadow-sm 
-        border border-tea-yellow/10 hover:border-tea-yellow/60 transition-all duration-300 
-        hover:shadow-md hover:shadow-tea-yellow/20 hover:scale-95 transform-gpu 
-        animate-float cursor-pointer group opacity-0 -translate-x-full`}
+        border border-tea-yellow/10 hover:border-tea-yellow/60 transition-all duration-500 
+        card-hover-effect hover:shadow-md hover:shadow-tea-yellow/20
+        cursor-pointer group opacity-0 -translate-x-full`}
       style={{ 
         animationDelay: `${index * 150}ms`,
         animationFillMode: 'forwards'
       }}
     >
-      <div className="mb-4 text-tea-green group-hover:rotate-12 transition-transform duration-300">
+      <div className="mb-4 text-tea-green transform transition-all duration-500 group-hover:rotate-12 group-hover:scale-110">
         {icon}
       </div>
-      <h3 className="font-medium text-tea-green mb-1 group-hover:text-tea-green/90">{title}</h3>
-      <p className="text-sm text-muted-foreground group-hover:text-muted-foreground/90">{description}</p>
+      <h3 className="font-medium text-tea-green mb-1 group-hover:text-tea-green/90 transition-colors duration-300">{title}</h3>
+      <p className="text-sm text-muted-foreground group-hover:text-muted-foreground/90 transition-colors duration-300">{description}</p>
     </div>
   );
 };

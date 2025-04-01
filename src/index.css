@@ -157,8 +157,26 @@
     z-index: 2;
   }
   
-  /* Add continuous side-motion animation class */
+  /* Animation classes */
   .animate-side-float {
-    animation: side-float 3s ease-in-out infinite;
+    animation: side-float 4s ease-in-out infinite;
+  }
+  
+  .animate-wave-motion {
+    animation: wave-motion 6s ease-in-out infinite;
+  }
+  
+  .animate-pulse-grow {
+    animation: pulse-grow 4s ease-in-out infinite;
+  }
+  
+  /* Card hover effects */
+  .card-hover-effect {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  
+  .card-hover-effect:hover {
+    transform: scale(0.95) translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
   }
 }
