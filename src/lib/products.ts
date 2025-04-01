@@ -1,4 +1,3 @@
-
 export interface Product {
   id: string;
   name: string;
@@ -18,36 +17,42 @@ export interface Product {
 export const products: Product[] = [
   {
     id: "product-1",
-    name: "Handcrafted Wooden Bowl",
-    category: "Home Decor",
-    price: 49.99,
-    imageSrc: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?auto=format&fit=crop&q=80&w=800&h=800",
-    description: "Our handcrafted wooden bowl combines natural beauty with functional design. Each piece is meticulously carved from sustainable wood, showcasing the unique grain patterns and organic textures of the material. Perfect as a centerpiece or for serving, this bowl adds warmth and character to any space.",
+    name: "Spot Cake",
+    category: "Cakes",
+    price: 4.99,
+    imageSrc: "https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&q=80&w=800&h=800",
+    description: "Our signature spot cake is a local favorite, featuring a soft, spongy texture with subtle sweetness. Available in various flavors including Badam, Mango, and Rose Milk, each bite delivers a perfect balance of traditional tastes and comforting texture.",
     featured: true,
     details: {
-      dimensions: "12\" diameter x 4\" height",
-      materials: "Sustainable acacia wood",
-      colors: ["Natural", "Walnut stain", "Ebony"],
-      features: ["Food safe", "Hand wash only", "Unique grain patterns", "Ethically sourced materials"]
+      features: ["Freshly baked daily", "No artificial preservatives", "Signature recipe", "Perfect with tea"]
     }
   },
   {
     id: "product-2",
-    name: "Modern Accent Chair",
-    category: "Furniture",
-    price: 299.99,
-    imageSrc: "https://images.unsplash.com/photo-1721322800607-8c38375eef04?auto=format&fit=crop&q=80&w=800&h=800",
-    description: "Our modern accent chair combines comfort with contemporary design. The sleek silhouette features clean lines and minimalist details, while the plush cushioning provides exceptional comfort. The perfect statement piece for any living space, bedroom, or reading nook.",
+    name: "Masala Chai",
+    category: "Tea",
+    price: 2.99,
+    imageSrc: "https://images.unsplash.com/photo-1571934811356-5cc061b6821f?auto=format&fit=crop&q=80&w=800&h=800",
+    description: "Our authentic Masala Chai combines premium black tea with a perfect blend of aromatic spices including cardamom, cinnamon, ginger, and cloves. Brewed to perfection and served hot with just the right amount of sweetness for a truly comforting experience.",
     featured: true,
     details: {
-      dimensions: "30\" W x 32\" D x 34\" H",
-      materials: "Solid wood frame, high-density foam, premium upholstery",
-      colors: ["Cream", "Gray", "Dusty Blue"],
-      features: ["Sturdy construction", "Stain-resistant fabric", "Non-marking feet", "Easy assembly"]
+      features: ["Traditional spice blend", "Premium black tea", "Brewed fresh", "Perfect strength"]
     }
   },
   {
     id: "product-3",
+    name: "Egg Coffee",
+    category: "Coffee",
+    price: 3.99,
+    imageSrc: "https://images.unsplash.com/photo-1610889556528-9a770e32642f?auto=format&fit=crop&q=80&w=800&h=800",
+    description: "Our specialty Egg Coffee is a delightful surprise for coffee enthusiasts. This unique beverage features rich, freshly brewed coffee topped with a creamy, custard-like layer made from whisked egg yolks and condensed milk, creating a luxurious treat that's both sweet and robust.",
+    featured: true,
+    details: {
+      features: ["Signature recipe", "Creamy texture", "Rich flavor profile", "Freshly prepared"]
+    }
+  },
+  {
+    id: "product-4",
     name: "Artisanal Ceramic Vase",
     category: "Home Decor",
     price: 79.99,
@@ -62,7 +67,7 @@ export const products: Product[] = [
     }
   },
   {
-    id: "product-4",
+    id: "product-5",
     name: "Minimalist Table Lamp",
     category: "Lighting",
     price: 129.99,
@@ -77,7 +82,7 @@ export const products: Product[] = [
     }
   },
   {
-    id: "product-5",
+    id: "product-6",
     name: "Organic Cotton Throw",
     category: "Textiles",
     price: 89.99,
@@ -89,21 +94,6 @@ export const products: Product[] = [
       materials: "100% organic cotton",
       colors: ["Natural", "Sage", "Terracotta"],
       features: ["GOTS certified", "Hypoallergenic", "Machine washable", "Sustainably produced"]
-    }
-  },
-  {
-    id: "product-6",
-    name: "Handwoven Basket Set",
-    category: "Storage",
-    price: 119.99,
-    imageSrc: "https://images.unsplash.com/photo-1615486511484-92e172cc4fe0?auto=format&fit=crop&q=80&w=800&h=800",
-    description: "Our handwoven basket set brings artisanal craftsmanship and practical storage to your home. Each set includes three nesting baskets in different sizes, perfect for organizing everything from blankets to small items. The natural materials and intricate weaving create texture and visual interest in any room.",
-    featured: true,
-    details: {
-      dimensions: "Large: 18\" D x 12\" H, Medium: 15\" D x 10\" H, Small: 12\" D x 8\" H",
-      materials: "Sustainable seagrass with cotton accents",
-      colors: ["Natural/White", "Natural/Black"],
-      features: ["Handwoven", "Sturdy construction", "Nesting design", "Fair trade"]
     }
   }
 ];
