@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Hero from "@/components/Hero";
 import ProductCard from "@/components/ProductCard";
@@ -8,6 +8,26 @@ import { ArrowRight, CupSoda, Coffee, Utensils, CakeSlice, Soup } from "lucide-r
 
 const Index: React.FC = () => {
   const featuredProducts = getFeaturedProducts();
+
+  useEffect(() => {
+    // Animation for category cards
+    const cards = document.querySelectorAll('.category-card');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          // Staggered animation delay based on index
+          setTimeout(() => {
+            entry.target.classList.add('animate-slide-in');
+          }, index * 150);
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    cards.forEach(card => observer.observe(card));
+    
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <>
@@ -25,28 +45,32 @@ const Index: React.FC = () => {
       </div>
       
       {/* Categories Section */}
-      <section className="py-12 md:py-20 bg-tea-yellow/20">
+      <section className="py-12 md:py-20 bg-tea-yellow/20 overflow-hidden">
         <div className="container mx-auto container-padding">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
             <CategoryCard 
               title="Tea Varieties" 
               icon={<CupSoda className="h-8 w-8" />} 
               description="Masala Chai, Cardamom Chai, Ginger Plain Tea"
+              index={0}
             />
             <CategoryCard 
               title="Rolls Varieties" 
               icon={<Utensils className="h-8 w-8" />}
               description="Vegetable, Chicken, Fish Rolls"
+              index={1}
             />
             <CategoryCard 
               title="Spot Cake Varieties" 
               icon={<CakeSlice className="h-8 w-8" />}
               description="Badam, Mango, Rose Milk Flavors"
+              index={2}
             />
             <CategoryCard 
               title="Chips Varieties" 
               icon={<Soup className="h-8 w-8" />}
               description="Cassava Chips & More"
+              index={3}
             />
           </div>
         </div>
@@ -149,13 +173,21 @@ interface CategoryCardProps {
   title: string;
   icon: React.ReactNode;
   description: string;
+  index: number;
 }
 
-const CategoryCard: React.FC<CategoryCardProps> = ({ title, icon, description }) => {
+const CategoryCard: React.FC<CategoryCardProps> = ({ title, icon, description, index }) => {
   return (
-    <div className="flex flex-col items-center text-center p-6 rounded-lg bg-white shadow-sm border border-tea-yellow/10 
-      hover:border-tea-yellow/60 transition-all duration-300 hover:shadow-md hover:shadow-tea-yellow/20 
-      hover:-translate-y-2 transform-gpu animate-float cursor-pointer group">
+    <div 
+      className={`category-card flex flex-col items-center text-center p-6 rounded-lg bg-white shadow-sm 
+        border border-tea-yellow/10 hover:border-tea-yellow/60 transition-all duration-300 
+        hover:shadow-md hover:shadow-tea-yellow/20 hover:-translate-y-2 transform-gpu 
+        animate-float cursor-pointer group opacity-0 -translate-x-full`}
+      style={{ 
+        animationDelay: `${index * 150}ms`,
+        animationFillMode: 'forwards'
+      }}
+    >
       <div className="mb-4 text-tea-green group-hover:scale-110 transition-transform duration-300">
         {icon}
       </div>
