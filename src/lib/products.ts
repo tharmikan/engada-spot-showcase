@@ -1,3 +1,4 @@
+
 export interface Product {
   id: string;
   name: string;
@@ -53,6 +54,18 @@ export const products: Product[] = [
   },
   {
     id: "product-4",
+    name: "Assorted Rolls",
+    category: "Rolls",
+    price: 5.99,
+    imageSrc: "https://images.unsplash.com/photo-1603532648955-039310d9ed75?auto=format&fit=crop&q=80&w=800&h=800",
+    description: "Our delicious selection of freshly made rolls includes Vegetable, Fish, and Chicken varieties. Each roll is carefully prepared with aromatic spices, wrapped in a crispy golden coating, and served hot for a satisfying snack or accompaniment to your favorite tea.",
+    featured: true,
+    details: {
+      features: ["Three varieties: Veg, Fish, and Chicken", "Made fresh daily", "Crispy exterior", "Aromatic spices"]
+    }
+  },
+  {
+    id: "product-5",
     name: "Artisanal Ceramic Vase",
     category: "Home Decor",
     price: 79.99,
@@ -67,7 +80,7 @@ export const products: Product[] = [
     }
   },
   {
-    id: "product-5",
+    id: "product-6",
     name: "Minimalist Table Lamp",
     category: "Lighting",
     price: 129.99,
@@ -82,7 +95,7 @@ export const products: Product[] = [
     }
   },
   {
-    id: "product-6",
+    id: "product-7",
     name: "Organic Cotton Throw",
     category: "Textiles",
     price: 89.99,
