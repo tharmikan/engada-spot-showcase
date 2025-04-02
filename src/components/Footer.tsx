@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 import { Instagram, Twitter, Facebook, Mail, Phone, Coffee, CupSoda } from "lucide-react";
@@ -44,11 +43,11 @@ const Footer: React.FC = () => {
             <div className="space-y-2 text-primary-foreground/90">
               <div className="flex items-center space-x-3">
                 <Mail size={16} />
-                <span>hello@engadaspot.com</span>
+                <span>engadaspot@gmail.com</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone size={16} />
-                <span>+1 (555) 123-4567</span>
+                <span>+94774466452</span>
               </div>
             </div>
           </div>
