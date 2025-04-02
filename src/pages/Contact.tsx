@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Mail, Phone, MapPin, Send, CheckCircle } from "lucide-react";
 import { toast } from "sonner";
@@ -61,15 +60,15 @@ const Contact: React.FC = () => {
               <ContactInfo 
                 icon={<Mail />}
                 title="Email Us"
-                content="contact@engadaspot.com"
-                href="mailto:contact@engadaspot.com"
+                content="engadaspot@gmail.com"
+                href="mailto:engadaspot@gmail.com"
               />
               
               <ContactInfo 
                 icon={<Phone />}
                 title="Call Us"
-                content="+1 (555) 123-4567"
-                href="tel:+15551234567"
+                content="+94774466452"
+                href="tel:+94774466452"
               />
               
               <ContactInfo 
