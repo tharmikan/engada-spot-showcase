@@ -15,17 +15,10 @@ const Index: React.FC = () => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
-          // Staggered animation delay based on index
-          setTimeout(() => {
-            entry.target.classList.add('animate-slide-in');
-            // Add continuous moving animation class after slide-in
-            setTimeout(() => {
-              // Alternate between different animations for visual variety
-              const animations = ['animate-side-float', 'animate-wave-motion', 'animate-pulse-grow'];
-              const animationClass = animations[index % animations.length];
-              entry.target.classList.add(animationClass);
-            }, 800);
-          }, index * 150);
+          // Apply continuous animation classes immediately
+          const animations = ['animate-side-float', 'animate-wave-motion', 'animate-pulse-grow'];
+          const animationClass = animations[index % animations.length];
+          entry.target.classList.add(animationClass);
         }
       });
     }, { threshold: 0.1 });
@@ -187,11 +180,10 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ title, icon, description, i
     <div 
       className={`category-card flex flex-col items-center text-center p-6 rounded-lg bg-white shadow-sm 
         border border-tea-yellow/10 hover:border-tea-yellow/60 transition-all duration-500 
-        card-hover-effect hover:shadow-md hover:shadow-tea-yellow/20
-        cursor-pointer group opacity-0 -translate-x-full`}
+        card-hover-effect hover:shadow-md hover:shadow-tea-yellow/20 
+        cursor-pointer group`}
       style={{ 
         animationDelay: `${index * 150}ms`,
-        animationFillMode: 'forwards'
       }}
     >
       <div className="mb-4 text-tea-green transform transition-all duration-500 group-hover:rotate-12 group-hover:scale-110">
