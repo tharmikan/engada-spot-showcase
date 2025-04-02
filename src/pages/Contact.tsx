@@ -75,8 +75,8 @@ const Contact: React.FC = () => {
               <ContactInfo 
                 icon={<MapPin />}
                 title="Visit Us"
-                content="123 Design Street, New York, NY 10001"
-                href="https://maps.google.com"
+                content="No 106 Jaffna Road, Manipay 40000"
+                href="https://maps.google.com/maps?q=Engada+SPOT,+No+106+Jaffna+Road,+Manipay+40000"
               />
             </div>
             
@@ -194,12 +194,13 @@ const Contact: React.FC = () => {
       {/* Map Section */}
       <div className="h-80 md:h-96 bg-muted relative overflow-hidden">
         <iframe
-          title="Store Location"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.25280992323!2d-74.11976341508195!3d40.70583158864464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sca!4v1625687021561!5m2!1sen!2sca"
+          title="Engada SPOT Location"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3937.0639431468986!2d79.99553987369043!3d9.724612879999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3afe55284f5549fd%3A0xf7acf784d61c10ef!2sEngada%20SPOT!5e0!3m2!1sen!2sus!4v1699012345678!5m2!1sen!2sus"
           width="100%"
           height="100%"
           style={{ border: 0 }}
           loading="lazy"
+          allowFullScreen
         ></iframe>
       </div>
     </div>
