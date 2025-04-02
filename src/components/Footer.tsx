@@ -1,6 +1,7 @@
+
 import React from "react";
 import { Link } from "react-router-dom";
-import { Instagram, Twitter, Facebook, Mail, Phone, Coffee, CupSoda } from "lucide-react";
+import { Instagram, Facebook, Mail, Phone, Coffee, CupSoda } from "lucide-react";
 
 const Footer: React.FC = () => {
   return (
@@ -23,7 +24,11 @@ const Footer: React.FC = () => {
             </p>
             <div className="flex space-x-4">
               <SocialLink href="#" icon={<Instagram size={18} />} label="Instagram" />
-              <SocialLink href="#" icon={<Twitter size={18} />} label="Twitter" />
+              <SocialLink 
+                href="https://www.tiktok.com/@engada_spot?_t=ZS-8vC2Kr3K2Ce&_r=1" 
+                icon={<TikTokIcon size={18} />} 
+                label="TikTok" 
+              />
               <SocialLink href="#" icon={<Facebook size={18} />} label="Facebook" />
             </div>
           </div>
@@ -58,6 +63,24 @@ const Footer: React.FC = () => {
         </div>
       </div>
     </footer>
+  );
+};
+
+// Custom TikTok icon since it's not available in lucide-react
+const TikTokIcon: React.FC<{ size?: number }> = ({ size = 24 }) => {
+  return (
+    <svg 
+      width={size} 
+      height={size} 
+      viewBox="0 0 24 24" 
+      fill="none" 
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path 
+        d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.166v13.95c0 1.208-.985 2.19-2.19 2.19-1.208 0-2.19-.982-2.19-2.19s.982-2.19 2.19-2.19c.084 0 .166.006.25.015v-3.192a5.39 5.39 0 0 0-.25-.006c-2.982 0-5.398 2.415-5.398 5.397s2.416 5.398 5.398 5.398 5.398-2.416 5.398-5.398V8.865a8.605 8.605 0 0 0 4.829 1.472v-3.22a4.793 4.793 0 0 1-1.101-.431z" 
+        fill="currentColor" 
+      />
+    </svg>
   );
 };
 
