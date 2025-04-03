@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import ProductCard from "@/components/ProductCard";
 import { products } from "@/lib/products";
-import { Check, ChevronDown } from "lucide-react";
+import { Check, ChevronDown, TeaCup } from "lucide-react";
 
 const Products: React.FC = () => {
   const [filteredProducts, setFilteredProducts] = useState(products);
@@ -46,9 +46,9 @@ const Products: React.FC = () => {
       <div className="container mx-auto container-padding">
         {/* Header */}
         <div className="mb-12 text-center">
-          <h1 className="text-3xl md:text-4xl font-semibold">Our Products</h1>
+          <h1 className="text-3xl md:text-4xl font-semibold">Our Tea Collection</h1>
           <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-            Explore our curated collection of thoughtfully designed products for your home and lifestyle.
+            Discover our carefully selected range of premium teas and accompaniments from around the world, each with its own unique character and flavor profile.
           </p>
         </div>
         
@@ -59,7 +59,8 @@ const Products: React.FC = () => {
               onClick={() => setIsCategoryOpen(!isCategoryOpen)}
               className="flex items-center space-x-1 text-sm px-4 py-2 border rounded-md hover:bg-muted/50 transition-colors"
             >
-              <span>{selectedCategory || "All Categories"}</span>
+              <TeaCup size={16} className="mr-1" />
+              <span>{selectedCategory || "All Tea Types"}</span>
               <ChevronDown size={16} className={`transition-transform ${isCategoryOpen ? "rotate-180" : ""}`} />
             </button>
             
@@ -73,7 +74,7 @@ const Products: React.FC = () => {
                     }}
                     className="flex items-center justify-between w-full px-4 py-2 text-sm text-left hover:bg-muted/50"
                   >
-                    <span>All Categories</span>
+                    <span>All Tea Types</span>
                     {selectedCategory === null && <Check size={16} />}
                   </button>
                   
@@ -101,7 +102,7 @@ const Products: React.FC = () => {
               className="flex items-center space-x-1 text-sm px-4 py-2 border rounded-md hover:bg-muted/50 transition-colors"
             >
               <span>
-                {sortOption === "newest" && "Newest"}
+                {sortOption === "newest" && "Newest Arrivals"}
                 {sortOption === "priceAsc" && "Price: Low to High"}
                 {sortOption === "priceDesc" && "Price: High to Low"}
                 {sortOption === "nameAsc" && "Name: A to Z"}
@@ -113,7 +114,7 @@ const Products: React.FC = () => {
               <div className="absolute right-0 z-10 mt-1 w-48 bg-card rounded-md shadow-lg ring-1 ring-black ring-opacity-5">
                 <div className="py-1">
                   {[
-                    { id: "newest", label: "Newest" },
+                    { id: "newest", label: "Newest Arrivals" },
                     { id: "priceAsc", label: "Price: Low to High" },
                     { id: "priceDesc", label: "Price: High to Low" },
                     { id: "nameAsc", label: "Name: A to Z" },
@@ -145,7 +146,7 @@ const Products: React.FC = () => {
         {/* Products Grid */}
         {filteredProducts.length === 0 ? (
           <div className="text-center py-12">
-            <p className="text-lg text-muted-foreground">No products found matching your criteria.</p>
+            <p className="text-lg text-muted-foreground">No teas found matching your criteria.</p>
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
@@ -161,6 +162,31 @@ const Products: React.FC = () => {
             ))}
           </div>
         )}
+        
+        {/* Tea Benefits Banner */}
+        <div className="mt-20 p-8 bg-secondary rounded-lg">
+          <div className="text-center mb-6">
+            <h2 className="text-2xl font-semibold">The Benefits of Tea</h2>
+            <p className="text-muted-foreground mt-2">Discover why tea has been cherished for centuries</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="bg-background p-6 rounded-md shadow-sm">
+              <h3 className="font-medium text-lg mb-2">Wellness & Antioxidants</h3>
+              <p className="text-muted-foreground text-sm">Tea is rich in antioxidants that help your body fight free radicals and boost your immune system.</p>
+            </div>
+            
+            <div className="bg-background p-6 rounded-md shadow-sm">
+              <h3 className="font-medium text-lg mb-2">Calm & Focus</h3>
+              <p className="text-muted-foreground text-sm">The L-theanine in tea promotes relaxation while maintaining alertness and mental clarity.</p>
+            </div>
+            
+            <div className="bg-background p-6 rounded-md shadow-sm">
+              <h3 className="font-medium text-lg mb-2">Cultural Tradition</h3>
+              <p className="text-muted-foreground text-sm">Tea ceremonies and rituals connect us to centuries of cultural heritage and mindful practices.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
