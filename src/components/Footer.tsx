@@ -23,7 +23,11 @@ const Footer: React.FC = () => {
               Serving aromatic teas, coffee delights, savory rolls, and sweet treats with love and passion.
             </p>
             <div className="flex space-x-4">
-              <SocialLink href="#" icon={<Instagram size={18} />} label="Instagram" />
+              <SocialLink 
+                href="https://www.instagram.com/engada_spot?igsh=MXJoaGZ2Mnp4bjliag%3D%3D&utm_source=qr" 
+                icon={<Instagram size={18} />} 
+                label="Instagram" 
+              />
               <SocialLink 
                 href="https://www.tiktok.com/@engada_spot?_t=ZS-8vC2Kr3K2Ce&_r=1" 
                 icon={<TikTokIcon size={18} />} 
