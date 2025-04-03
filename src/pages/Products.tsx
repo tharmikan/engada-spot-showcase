@@ -11,7 +11,16 @@ const Products: React.FC = () => {
   const [sortOption, setSortOption] = useState<string>("newest");
   const [isSortOpen, setIsSortOpen] = useState(false);
   
-  const categories = Array.from(new Set(products.map((product) => product.category)));
+  // Filter to only include tea-related categories (excluding Home Decor, Lighting, and Textiles)
+  const teaCategories = Array.from(
+    new Set(
+      products
+        .map((product) => product.category)
+        .filter(category => 
+          !["Home Decor", "Lighting", "Textiles"].includes(category)
+        )
+    )
+  );
   
   useEffect(() => {
     let result = [...products];
@@ -78,7 +87,7 @@ const Products: React.FC = () => {
                     {selectedCategory === null && <Check size={16} />}
                   </button>
                   
-                  {categories.map((category) => (
+                  {teaCategories.map((category) => (
                     <button
                       key={category}
                       onClick={() => {
