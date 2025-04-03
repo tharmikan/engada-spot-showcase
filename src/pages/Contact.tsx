@@ -82,9 +82,7 @@ const Contact: React.FC = () => {
             <div className="space-y-4">
               <h2 className="text-xl font-semibold">Store Hours</h2>
               <div className="space-y-2">
-                <BusinessHours day="Monday - Friday" hours="10:00 AM - 7:00 PM" />
-                <BusinessHours day="Saturday" hours="11:00 AM - 6:00 PM" />
-                <BusinessHours day="Sunday" hours="Closed" />
+                <BusinessHours day="Every day" hours="4:00 PM - 12:00 PM" />
               </div>
             </div>
           </div>
