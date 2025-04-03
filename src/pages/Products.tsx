@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import ProductCard from "@/components/ProductCard";
 import { products } from "@/lib/products";
-import { Check, ChevronDown, TeaCup } from "lucide-react";
+import { Check, ChevronDown, CupSoda } from "lucide-react";
 
 const Products: React.FC = () => {
   const [filteredProducts, setFilteredProducts] = useState(products);
@@ -59,7 +59,7 @@ const Products: React.FC = () => {
               onClick={() => setIsCategoryOpen(!isCategoryOpen)}
               className="flex items-center space-x-1 text-sm px-4 py-2 border rounded-md hover:bg-muted/50 transition-colors"
             >
-              <TeaCup size={16} className="mr-1" />
+              <CupSoda size={16} className="mr-1" />
               <span>{selectedCategory || "All Tea Types"}</span>
               <ChevronDown size={16} className={`transition-transform ${isCategoryOpen ? "rotate-180" : ""}`} />
             </button>
