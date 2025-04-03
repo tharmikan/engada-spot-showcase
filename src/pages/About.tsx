@@ -9,8 +9,8 @@ const About: React.FC = () => {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-black/40 z-10"></div>
           <img 
-            src="https://images.unsplash.com/photo-1517705008128-361805f42e86?auto=format&fit=crop&q=80&w=1920"
-            alt="Our workshop" 
+            src="https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?auto=format&fit=crop&q=80&w=1920"
+            alt="Tea preparation" 
             className="w-full h-full object-cover object-center"
           />
         </div>
@@ -18,7 +18,7 @@ const About: React.FC = () => {
         <div className="container mx-auto px-4 md:px-6 relative z-20">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Our Story</h1>
           <p className="text-xl text-white/90 max-w-xl">
-            Crafting exceptional experiences through thoughtful design and quality products.
+            Brewing exceptional experiences through traditional tea culture and quality ingredients.
           </p>
         </div>
       </section>
@@ -29,19 +29,19 @@ const About: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 animate-on-scroll">
               <span className="text-sm uppercase tracking-widest text-muted-foreground">Our Mission</span>
-              <h2 className="text-3xl md:text-4xl font-semibold">Curating Quality for Intentional Living</h2>
+              <h2 className="text-3xl md:text-4xl font-semibold">Curating Quality Teas for Authentic Enjoyment</h2>
               <p className="text-muted-foreground">
-                At Engada Spot, our mission is to bring thoughtfully designed products into homes that value quality, craftsmanship, and timeless aesthetics. We believe that the objects we surround ourselves with should not only be beautiful, but also functional and made to last.
+                At Engada Spot, our mission is to bring thoughtfully selected teas into the lives of those who value quality, tradition, and authentic flavors. We believe that every cup of tea should not only be delicious but also a moment of tranquility and connection.
               </p>
               <p className="text-muted-foreground">
-                Each product in our collection is selected with care, considering its design integrity, the materials used, and the story behind its creation. We partner with artisans and manufacturers who share our commitment to ethical production and sustainable practices.
+                Each tea in our collection is selected with care, considering its origin, the quality of leaves, and the story behind its production. We partner with tea gardens and suppliers who share our commitment to ethical sourcing and sustainable practices.
               </p>
             </div>
             
             <div className="relative h-80 md:h-96 rounded-lg overflow-hidden animate-on-scroll">
               <img 
-                src="https://images.unsplash.com/photo-1581539250439-c96689b516dd?auto=format&fit=crop&q=80&w=800"
-                alt="Craftsman at work"
+                src="https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?auto=format&fit=crop&q=80&w=800"
+                alt="Tea plantation"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -59,16 +59,16 @@ const About: React.FC = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <ValueCard 
-              title="Quality Craftsmanship" 
-              description="We believe in products that are built to last, created with skill and attention to detail."
+              title="Authentic Flavors" 
+              description="We preserve traditional brewing methods and source genuine ingredients to deliver the most authentic tea experience."
             />
             <ValueCard 
-              title="Thoughtful Design" 
-              description="Every product we offer balances form and function, enhancing both aesthetics and everyday living."
+              title="Heritage & Culture" 
+              description="Our teas celebrate rich cultural traditions, connecting you to centuries of tea wisdom with every sip."
             />
             <ValueCard 
-              title="Sustainable Practices" 
-              description="We prioritize materials and processes that minimize environmental impact and promote ethical production."
+              title="Sustainable Sourcing" 
+              description="We prioritize tea gardens and suppliers that implement ethical practices and environmentally conscious production methods."
             />
           </div>
         </div>
@@ -81,24 +81,24 @@ const About: React.FC = () => {
             <span className="text-sm uppercase tracking-widest text-muted-foreground">Our Team</span>
             <h2 className="text-3xl md:text-4xl font-semibold mt-2">The People Behind Engada Spot</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto mt-4">
-              Our passionate team brings diverse expertise in design, craftsmanship, and curation to create a unique shopping experience.
+              Our passionate team brings diverse expertise in tea selection, brewing techniques, and cultural knowledge to create a unique tea experience.
             </p>
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             <TeamMember 
               name="Alexandra Wright"
-              role="Founder & Creative Director"
+              role="Founder & Tea Specialist"
               imageSrc="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=400&h=400"
             />
             <TeamMember 
               name="David Chen"
-              role="Product Curator"
+              role="Tea Sourcing Expert"
               imageSrc="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400&h=400"
             />
             <TeamMember 
               name="Mia Johnson"
-              role="Artisan Relations"
+              role="Master Brewer"
               imageSrc="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&q=80&w=400&h=400"
             />
           </div>
