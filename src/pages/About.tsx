@@ -113,7 +113,12 @@ const About: React.FC = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <TeamMember 
+              name="Karikalan Rishivarman"
+              role="Founder"
+              imageSrc="/lovable-uploads/79c92899-48d4-41c0-b027-9b53d28f840d.png"
+            />
             <TeamMember 
               name="Alexandra Wright"
               role="Founder & Tea Specialist"
