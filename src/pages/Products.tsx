@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import ProductCard from "@/components/ProductCard";
 import { products } from "@/lib/products";
@@ -12,15 +11,9 @@ const Products: React.FC = () => {
   const [isSortOpen, setIsSortOpen] = useState(false);
   const [categoryType, setCategoryType] = useState<"drink" | "bite" | null>(null);
   
-  // Filter to only include tea-related categories (excluding Home Decor, Lighting, and Textiles)
+  // Get unique categories
   const teaCategories = Array.from(
-    new Set(
-      products
-        .map((product) => product.category)
-        .filter(category => 
-          !["Home Decor", "Lighting", "Textiles"].includes(category)
-        )
-    )
+    new Set(products.map((product) => product.category))
   );
   
   // Categorize products into "To Drink" and "To Bite"

@@ -15,7 +15,8 @@ export interface Product {
   };
 }
 
-export const products: Product[] = [
+// Original products array but we'll filter out home decor items when exporting
+const allProducts: Product[] = [
   {
     id: "product-1",
     name: "Spot Cake",
@@ -110,6 +111,11 @@ export const products: Product[] = [
     }
   }
 ];
+
+// Export only tea-related products (excluding home decor items)
+export const products: Product[] = allProducts.filter(product => 
+  !["Home Decor", "Lighting", "Textiles"].includes(product.category)
+);
 
 export function getFeaturedProducts(): Product[] {
   return products.filter(product => product.featured);
