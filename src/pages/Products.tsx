@@ -10,6 +10,7 @@ const Products: React.FC = () => {
   const [isCategoryOpen, setIsCategoryOpen] = useState(false);
   const [sortOption, setSortOption] = useState<string>("newest");
   const [isSortOpen, setIsSortOpen] = useState(false);
+  const [categoryType, setCategoryType] = useState<"drink" | "bite" | null>(null);
   
   // Filter to only include tea-related categories (excluding Home Decor, Lighting, and Textiles)
   const teaCategories = Array.from(
@@ -22,10 +23,25 @@ const Products: React.FC = () => {
     )
   );
   
+  // Categorize products into "To Drink" and "To Bite"
+  const drinkCategories = teaCategories.filter(category => 
+    ["Tea", "Coffee"].includes(category)
+  );
+  
+  const biteCategories = teaCategories.filter(category => 
+    ["Cakes", "Rolls"].includes(category)
+  );
+  
   useEffect(() => {
     let result = [...products];
     
-    // Apply category filter
+    // Apply category type filter first (To Drink or To Bite)
+    if (categoryType) {
+      const relevantCategories = categoryType === "drink" ? drinkCategories : biteCategories;
+      result = result.filter((product) => relevantCategories.includes(product.category));
+    }
+    
+    // Apply specific category filter
     if (selectedCategory) {
       result = result.filter((product) => product.category === selectedCategory);
     }
@@ -48,7 +64,7 @@ const Products: React.FC = () => {
     }
     
     setFilteredProducts(result);
-  }, [selectedCategory, sortOption]);
+  }, [categoryType, selectedCategory, sortOption]);
   
   return (
     <div className="pt-20 md:pt-28 pb-20">
@@ -69,7 +85,11 @@ const Products: React.FC = () => {
               className="flex items-center space-x-1 text-sm px-4 py-2 border rounded-md hover:bg-muted/50 transition-colors"
             >
               <CupSoda size={16} className="mr-1" />
-              <span>{selectedCategory || "All Tea Types"}</span>
+              <span>
+                {categoryType === "drink" ? "To Drink" : 
+                 categoryType === "bite" ? "To Bite" : 
+                 selectedCategory || "All Products"}
+              </span>
               <ChevronDown size={16} className={`transition-transform ${isCategoryOpen ? "rotate-180" : ""}`} />
             </button>
             
@@ -79,25 +99,70 @@ const Products: React.FC = () => {
                   <button
                     onClick={() => {
                       setSelectedCategory(null);
+                      setCategoryType(null);
                       setIsCategoryOpen(false);
                     }}
                     className="flex items-center justify-between w-full px-4 py-2 text-sm text-left hover:bg-muted/50"
                   >
-                    <span>All Tea Types</span>
-                    {selectedCategory === null && <Check size={16} />}
+                    <span>All Products</span>
+                    {categoryType === null && selectedCategory === null && <Check size={16} />}
                   </button>
                   
-                  {teaCategories.map((category) => (
+                  {/* To Drink category */}
+                  <button
+                    onClick={() => {
+                      setCategoryType("drink");
+                      setSelectedCategory(null);
+                      setIsCategoryOpen(false);
+                    }}
+                    className="flex items-center justify-between w-full px-4 py-2 text-sm text-left hover:bg-muted/50 font-medium"
+                  >
+                    <span>To Drink</span>
+                    {categoryType === "drink" && selectedCategory === null && <Check size={16} />}
+                  </button>
+                  
+                  {/* Drink subcategories */}
+                  {drinkCategories.map((category) => (
                     <button
                       key={category}
                       onClick={() => {
+                        setCategoryType("drink");
                         setSelectedCategory(category);
                         setIsCategoryOpen(false);
                       }}
-                      className="flex items-center justify-between w-full px-4 py-2 text-sm text-left hover:bg-muted/50"
+                      className="flex items-center justify-between w-full px-4 py-2 text-sm text-left hover:bg-muted/50 pl-8"
                     >
                       <span>{category}</span>
-                      {selectedCategory === category && <Check size={16} />}
+                      {categoryType === "drink" && selectedCategory === category && <Check size={16} />}
+                    </button>
+                  ))}
+                  
+                  {/* To Bite category */}
+                  <button
+                    onClick={() => {
+                      setCategoryType("bite");
+                      setSelectedCategory(null);
+                      setIsCategoryOpen(false);
+                    }}
+                    className="flex items-center justify-between w-full px-4 py-2 text-sm text-left hover:bg-muted/50 font-medium"
+                  >
+                    <span>To Bite</span>
+                    {categoryType === "bite" && selectedCategory === null && <Check size={16} />}
+                  </button>
+                  
+                  {/* Bite subcategories */}
+                  {biteCategories.map((category) => (
+                    <button
+                      key={category}
+                      onClick={() => {
+                        setCategoryType("bite");
+                        setSelectedCategory(category);
+                        setIsCategoryOpen(false);
+                      }}
+                      className="flex items-center justify-between w-full px-4 py-2 text-sm text-left hover:bg-muted/50 pl-8"
+                    >
+                      <span>{category}</span>
+                      {categoryType === "bite" && selectedCategory === category && <Check size={16} />}
                     </button>
                   ))}
                 </div>
@@ -149,13 +214,14 @@ const Products: React.FC = () => {
         {/* Results Count */}
         <div className="mb-8 text-sm text-muted-foreground">
           Showing {filteredProducts.length} {filteredProducts.length === 1 ? "product" : "products"}
-          {selectedCategory && ` in ${selectedCategory}`}
+          {categoryType && ` in ${categoryType === "drink" ? "To Drink" : "To Bite"} category`}
+          {selectedCategory && ` (${selectedCategory})`}
         </div>
         
         {/* Products Grid */}
         {filteredProducts.length === 0 ? (
           <div className="text-center py-12">
-            <p className="text-lg text-muted-foreground">No teas found matching your criteria.</p>
+            <p className="text-lg text-muted-foreground">No products found matching your criteria.</p>
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
