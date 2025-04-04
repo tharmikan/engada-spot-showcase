@@ -1,7 +1,32 @@
 
-import React from "react";
+import React, { useEffect } from "react";
 
 const About: React.FC = () => {
+  useEffect(() => {
+    // Animation for value cards
+    const valueCards = document.querySelectorAll('.value-card');
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          // Apply continuous animation classes with delay based on index
+          const animations = ['animate-side-float', 'animate-wave-motion', 'animate-pulse-grow'];
+          const animationClass = animations[index % animations.length];
+          
+          // Add animation with delay to create a staggered effect
+          setTimeout(() => {
+            entry.target.classList.add(animationClass);
+            entry.target.classList.add('opacity-100', 'translate-y-0');
+          }, index * 150);
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    valueCards.forEach(card => observer.observe(card));
+    
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="pt-20 md:pt-28 pb-20">
       {/* Hero Section */}
@@ -61,14 +86,17 @@ const About: React.FC = () => {
             <ValueCard 
               title="Authentic Flavors" 
               description="We preserve traditional brewing methods and source genuine ingredients to deliver the most authentic tea experience."
+              index={0}
             />
             <ValueCard 
               title="Heritage & Culture" 
               description="Our teas celebrate rich cultural traditions, connecting you to centuries of tea wisdom with every sip."
+              index={1}
             />
             <ValueCard 
               title="Sustainable Sourcing" 
               description="We prioritize tea gardens and suppliers that implement ethical practices and environmentally conscious production methods."
+              index={2}
             />
           </div>
         </div>
@@ -111,11 +139,17 @@ const About: React.FC = () => {
 interface ValueCardProps {
   title: string;
   description: string;
+  index: number;
 }
 
-const ValueCard: React.FC<ValueCardProps> = ({ title, description }) => {
+const ValueCard: React.FC<ValueCardProps> = ({ title, description, index }) => {
   return (
-    <div className="p-6 bg-background rounded-lg shadow-sm animate-on-scroll">
+    <div 
+      className="value-card p-6 bg-background rounded-lg shadow-sm opacity-0 translate-y-8 transition-all duration-700 ease-out"
+      style={{ 
+        animationDelay: `${index * 150}ms`,
+      }}
+    >
       <h3 className="font-serif text-xl font-medium mb-3">{title}</h3>
       <p className="text-muted-foreground">{description}</p>
     </div>
