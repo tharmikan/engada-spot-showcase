@@ -130,9 +130,9 @@ const About: React.FC = () => {
               imageSrc="/lovable-uploads/969c7c6c-6745-419d-8652-53c50758085c.png"
             />
             <TeamMember 
-              name="Mia Johnson"
-              role="Master Brewer"
-              imageSrc="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&q=80&w=400&h=400"
+              name="Sanju Sri"
+              role="Visual Stylist & Event Planner"
+              imageSrc="/lovable-uploads/b0e2ad26-8c0c-499e-9c7c-22c483b7fdc3.png"
             />
           </div>
         </div>
