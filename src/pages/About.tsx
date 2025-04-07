@@ -125,9 +125,9 @@ const About: React.FC = () => {
               imageSrc="/lovable-uploads/d9883bad-36de-4191-a6a2-3a077d376274.png"
             />
             <TeamMember 
-              name="David Chen"
-              role="Tea Sourcing Expert"
-              imageSrc="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400&h=400"
+              name="Sivarathihan Sivajeevan"
+              role="Editor"
+              imageSrc="/lovable-uploads/969c7c6c-6745-419d-8652-53c50758085c.png"
             />
             <TeamMember 
               name="Mia Johnson"
