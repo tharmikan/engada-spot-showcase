@@ -113,7 +113,7 @@ const About: React.FC = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
             <TeamMember 
               name="Karikalan Rishivarman"
               role="Founder"
@@ -133,6 +133,11 @@ const About: React.FC = () => {
               name="Sanju Sri"
               role="Visual Stylist & Event Planner"
               imageSrc="/lovable-uploads/b0e2ad26-8c0c-499e-9c7c-22c483b7fdc3.png"
+            />
+            <TeamMember 
+              name="Kugeswararajah Tharmikan"
+              role="Social Media Coordinator"
+              imageSrc="/lovable-uploads/76b749a4-f3d9-417d-876b-ed78be23e6cd.png"
             />
           </div>
         </div>
