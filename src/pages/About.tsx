@@ -34,8 +34,8 @@ const About: React.FC = () => {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-black/40 z-10"></div>
           <img 
-            src="https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?auto=format&fit=crop&q=80&w=1920"
-            alt="Tea preparation" 
+            src="/lovable-uploads/b92768fd-1558-46ff-b3fa-cdee4b182308.png"
+            alt="Engada Spot tea venue" 
             className="w-full h-full object-cover object-center"
           />
         </div>
