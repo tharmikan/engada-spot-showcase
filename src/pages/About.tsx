@@ -120,9 +120,9 @@ const About: React.FC = () => {
               imageSrc="/lovable-uploads/79c92899-48d4-41c0-b027-9b53d28f840d.png"
             />
             <TeamMember 
-              name="Alexandra Wright"
-              role="Founder & Tea Specialist"
-              imageSrc="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=400&h=400"
+              name="Ramsunthar Kantharuban"
+              role="Founder"
+              imageSrc="/lovable-uploads/d9883bad-36de-4191-a6a2-3a077d376274.png"
             />
             <TeamMember 
               name="David Chen"
