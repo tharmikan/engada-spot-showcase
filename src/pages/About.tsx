@@ -182,8 +182,8 @@ const TeamMember: React.FC<TeamMemberProps> = ({ name, role, imageSrc }) => {
           className="w-full h-full object-cover"
         />
       </div>
-      <h3 className="font-serif text-xl font-medium">{name}</h3>
-      <p className="text-muted-foreground">{role}</p>
+      <h3 className="font-serif text-xl font-medium text-center whitespace-nowrap overflow-hidden text-ellipsis max-w-full">{name}</h3>
+      <p className="text-muted-foreground text-center whitespace-nowrap overflow-hidden text-ellipsis max-w-full">{role}</p>
     </div>
   );
 };
