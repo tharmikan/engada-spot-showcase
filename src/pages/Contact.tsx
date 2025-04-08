@@ -1,6 +1,8 @@
+
 import React, { useState } from "react";
 import { Mail, Phone, MapPin, Send, CheckCircle } from "lucide-react";
 import { toast } from "sonner";
+import emailjs from 'emailjs-com';
 
 const Contact: React.FC = () => {
   const [formState, setFormState] = useState({
@@ -22,18 +24,38 @@ const Contact: React.FC = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-      toast.success("Message sent successfully!");
-      setFormState({ name: "", email: "", subject: "", message: "" });
-      
-      // Reset success state after delay
-      setTimeout(() => {
-        setIsSubmitted(false);
-      }, 3000);
-    }, 1500);
+    // Send email using EmailJS
+    const templateParams = {
+      from_name: formState.name,
+      from_email: formState.email,
+      subject: formState.subject,
+      message: formState.message,
+      to_email: "engadaspot@gmail.com",
+    };
+    
+    emailjs.send(
+      "service_contact_form", // You need to replace this with your actual service ID
+      "template_contact_form", // You need to replace this with your actual template ID
+      templateParams,
+      "your_emailjs_user_id" // You need to replace this with your actual user ID
+    )
+      .then((response) => {
+        console.log("Email sent successfully:", response);
+        setIsSubmitting(false);
+        setIsSubmitted(true);
+        toast.success("Message sent successfully! We'll get back to you soon.");
+        setFormState({ name: "", email: "", subject: "", message: "" });
+        
+        // Reset success state after delay
+        setTimeout(() => {
+          setIsSubmitted(false);
+        }, 3000);
+      })
+      .catch((error) => {
+        console.error("Failed to send email:", error);
+        setIsSubmitting(false);
+        toast.error("Failed to send message. Please try again later.");
+      });
   };
   
   return (
