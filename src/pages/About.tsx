@@ -102,6 +102,32 @@ const About: React.FC = () => {
         </div>
       </section>
       
+      {/* Video Showcase Section */}
+      <section className="section-padding bg-background">
+        <div className="container mx-auto container-padding">
+          <div className="text-center mb-12">
+            <span className="text-sm uppercase tracking-widest text-muted-foreground">Our Experience</span>
+            <h2 className="text-3xl md:text-4xl font-semibold mt-2">Discover Engada Spot</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto mt-4">
+              Take a virtual tour through our tea culture and experience what makes Engada Spot special.
+            </p>
+          </div>
+          
+          <div className="max-w-4xl mx-auto">
+            <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-lg">
+              <iframe 
+                className="w-full h-full"
+                src="https://www.youtube.com/embed/6dDnBWBqqA0" 
+                title="Engada Spot Tea Experience"
+                frameBorder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowFullScreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+      
       {/* Team Section */}
       <section className="section-padding">
         <div className="container mx-auto container-padding">
