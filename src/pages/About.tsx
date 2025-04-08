@@ -135,7 +135,7 @@ const About: React.FC = () => {
               imageSrc="/lovable-uploads/b0e2ad26-8c0c-499e-9c7c-22c483b7fdc3.png"
             />
             <TeamMember 
-              name="Kugeswararajah Tharmikan"
+              name="K.Tharmikan"
               role="Social Media Coordinator"
               imageSrc="/lovable-uploads/76b749a4-f3d9-417d-876b-ed78be23e6cd.png"
             />
