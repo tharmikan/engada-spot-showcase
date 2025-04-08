@@ -1,4 +1,3 @@
-
 import React, { useEffect } from "react";
 
 const About: React.FC = () => {
@@ -102,7 +101,7 @@ const About: React.FC = () => {
         </div>
       </section>
       
-      {/* Video Showcase Section */}
+      {/* Video Showcase Section - Increased size */}
       <section className="section-padding bg-background">
         <div className="container mx-auto container-padding">
           <div className="text-center mb-12">
@@ -113,10 +112,11 @@ const About: React.FC = () => {
             </p>
           </div>
           
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-5xl mx-auto">
             <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-lg">
               <iframe 
                 className="w-full h-full"
+                style={{ minHeight: "450px" }}
                 src="https://www.youtube.com/embed/6dDnBWBqqA0" 
                 title="Engada Spot Tea Experience"
                 frameBorder="0" 
@@ -128,7 +128,7 @@ const About: React.FC = () => {
         </div>
       </section>
       
-      {/* Team Section */}
+      {/* Team Section - Fixed visibility */}
       <section className="section-padding">
         <div className="container mx-auto container-padding">
           <div className="text-center mb-12">
@@ -200,7 +200,7 @@ interface TeamMemberProps {
 
 const TeamMember: React.FC<TeamMemberProps> = ({ name, role, imageSrc }) => {
   return (
-    <div className="flex flex-col items-center animate-on-scroll">
+    <div className="flex flex-col items-center text-center animate-on-scroll">
       <div className="w-40 h-40 rounded-full overflow-hidden mb-4">
         <img 
           src={imageSrc} 
@@ -208,8 +208,8 @@ const TeamMember: React.FC<TeamMemberProps> = ({ name, role, imageSrc }) => {
           className="w-full h-full object-cover"
         />
       </div>
-      <h3 className="font-serif text-xl font-medium text-center whitespace-nowrap overflow-hidden text-ellipsis max-w-full">{name}</h3>
-      <p className="text-muted-foreground text-center whitespace-nowrap overflow-hidden text-ellipsis max-w-full">{role}</p>
+      <h3 className="font-serif text-xl font-medium max-w-full">{name}</h3>
+      <p className="text-muted-foreground max-w-full">{role}</p>
     </div>
   );
 };
