@@ -1,4 +1,6 @@
+
 import React, { useEffect } from "react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const About: React.FC = () => {
   useEffect(() => {
@@ -101,7 +103,7 @@ const About: React.FC = () => {
         </div>
       </section>
       
-      {/* Video Showcase Section - Increased size */}
+      {/* Video Showcase Section - With Tabs */}
       <section className="section-padding bg-background">
         <div className="container mx-auto container-padding">
           <div className="text-center mb-12">
@@ -112,18 +114,84 @@ const About: React.FC = () => {
             </p>
           </div>
           
-          <div className="max-w-5xl mx-auto">
-            <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-lg">
-              <iframe 
-                className="w-full h-full"
-                style={{ minHeight: "450px" }}
-                src="https://www.youtube.com/embed/6dDnBWBqqA0" 
-                title="Engada Spot Tea Experience"
-                frameBorder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowFullScreen
-              ></iframe>
-            </div>
+          <div className="max-w-6xl mx-auto">
+            <Tabs defaultValue="main-video" className="w-full">
+              <div className="flex justify-center mb-6">
+                <TabsList className="grid w-full max-w-md grid-cols-3">
+                  <TabsTrigger value="main-video">Overview</TabsTrigger>
+                  <TabsTrigger value="tea-process">Tea Process</TabsTrigger>
+                  <TabsTrigger value="tea-culture">Tea Culture</TabsTrigger>
+                </TabsList>
+              </div>
+              
+              <TabsContent value="main-video" className="mt-0">
+                <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-lg">
+                  <iframe 
+                    className="w-full h-full"
+                    style={{ minHeight: "500px" }}
+                    src="https://www.youtube.com/embed/6dDnBWBqqA0" 
+                    title="Engada Spot Tea Experience"
+                    frameBorder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              </TabsContent>
+              
+              <TabsContent value="tea-process" className="mt-0">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-lg animate-side-float">
+                    <iframe 
+                      className="w-full h-full"
+                      style={{ minHeight: "300px" }}
+                      src="https://www.youtube.com/embed/8xo12I4sJco" 
+                      title="Tea Processing at Engada Spot"
+                      frameBorder="0" 
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                  
+                  <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-lg animate-wave-motion">
+                    <iframe 
+                      className="w-full h-full"
+                      style={{ minHeight: "300px" }}
+                      src="https://www.youtube.com/embed/1Ay4j0DJntM" 
+                      title="Tea Culture at Engada Spot"
+                      frameBorder="0" 
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                </div>
+              </TabsContent>
+              
+              <TabsContent value="tea-culture" className="mt-0">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-lg animate-pulse-grow order-last md:order-first">
+                    <iframe 
+                      className="w-full h-full"
+                      style={{ minHeight: "300px" }}
+                      src="https://www.youtube.com/embed/1Ay4j0DJntM" 
+                      title="Tea Culture at Engada Spot"
+                      frameBorder="0" 
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                      allowFullScreen
+                    ></iframe>
+                  </div>
+                  
+                  <div className="space-y-6 flex flex-col justify-center">
+                    <h3 className="text-2xl font-serif font-semibold">Authentic Tea Culture</h3>
+                    <p className="text-muted-foreground">
+                      Our approach to tea is deeply rooted in cultural tradition and authenticity. We believe that understanding the culture behind tea enhances the drinking experience and connects you to a rich heritage spanning generations.
+                    </p>
+                    <p className="text-muted-foreground">
+                      Every cup tells a story of cultural exchange, tradition, and the unique elements that make each tea variety special to its region of origin.
+                    </p>
+                  </div>
+                </div>
+              </TabsContent>
+            </Tabs>
           </div>
         </div>
       </section>
