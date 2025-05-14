@@ -18,9 +18,7 @@ const Products: React.FC = () => {
   );
   
   // Categorize products into "To Drink" and "To Bite"
-  const drinkCategories = teaCategories.filter(category => 
-    ["Tea", "Coffee"].includes(category)
-  );
+  const drinkCategories = ["Masala chai", "Cardamon chai", "Milk coffee", "Egg coffee", "Ginger plain tea"];
   
   const biteCategories = teaCategories.filter(category => 
     ["Cakes", "Rolls"].includes(category)
