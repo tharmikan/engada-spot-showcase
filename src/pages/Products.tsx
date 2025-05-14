@@ -173,41 +173,21 @@ const Products: React.FC = () => {
                     {categoryType === "bite" && selectedCategory === null && <Check size={16} />}
                   </button>
                   
-                  {/* Bite subcategories with appropriate icons */}
-                  {biteCategories.map((category) => {
-                    let icon;
-                    if (category.includes("Chicken")) {
-                      icon = <Beef size={16} className="mr-2" />;
-                    } else if (category.includes("Fish")) {
-                      icon = <Fish size={16} className="mr-2" />;
-                    } else if (category.includes("Vegetable")) {
-                      icon = <Carrot size={16} className="mr-2" />;
-                    } else if (category.includes("Cake")) {
-                      icon = <Cake size={16} className="mr-2" />;
-                    } else if (category.includes("Cutlet")) {
-                      icon = <UtensilsCrossed size={16} className="mr-2" />;
-                    } else {
-                      icon = null;
-                    }
-                    
-                    return (
-                      <button
-                        key={category}
-                        onClick={() => {
-                          setCategoryType("bite");
-                          setSelectedCategory(category);
-                          setIsCategoryOpen(false);
-                        }}
-                        className="flex items-center justify-between w-full px-4 py-2 text-sm text-left hover:bg-muted/50 pl-8"
-                      >
-                        <div className="flex items-center">
-                          {icon}
-                          <span>{category}</span>
-                        </div>
-                        {categoryType === "bite" && selectedCategory === category && <Check size={16} />}
-                      </button>
-                    );
-                  })}
+                  {/* Bite subcategories without icons */}
+                  {biteCategories.map((category) => (
+                    <button
+                      key={category}
+                      onClick={() => {
+                        setCategoryType("bite");
+                        setSelectedCategory(category);
+                        setIsCategoryOpen(false);
+                      }}
+                      className="flex items-center justify-between w-full px-4 py-2 text-sm text-left hover:bg-muted/50 pl-8"
+                    >
+                      <span>{category}</span>
+                      {categoryType === "bite" && selectedCategory === category && <Check size={16} />}
+                    </button>
+                  ))}
                 </div>
               </div>
             )}
