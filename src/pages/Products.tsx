@@ -1,8 +1,7 @@
-
 import React, { useState, useEffect } from "react";
 import ProductCard from "@/components/ProductCard";
 import { products } from "@/lib/products";
-import { Check, ChevronDown, CupSoda } from "lucide-react";
+import { Check, ChevronDown, CupSoda, Chicken, Fish, Carrot, Cake, Cutlet } from "lucide-react";
 
 const Products: React.FC = () => {
   const [filteredProducts, setFilteredProducts] = useState(products);
@@ -20,9 +19,16 @@ const Products: React.FC = () => {
   // Categorize products into "To Drink" and "To Bite"
   const drinkCategories = ["Masala chai", "Cardamon chai", "Milk coffee", "Egg coffee", "Ginger plain tea"];
   
-  const biteCategories = teaCategories.filter(category => 
-    ["Cakes", "Rolls"].includes(category)
-  );
+  const biteCategories = [
+    "Chicken rolls", 
+    "Fish Rolls", 
+    "Vegetable Rolls", 
+    "Casava chips", 
+    "Badam Spot Cake", 
+    "Mango spot cake", 
+    "Rose milk spot cake", 
+    "Cutlet"
+  ];
   
   useEffect(() => {
     let result = [...products];
@@ -111,7 +117,7 @@ const Products: React.FC = () => {
             </button>
             
             {isCategoryOpen && (
-              <div className="absolute z-10 mt-1 w-48 bg-card rounded-md shadow-lg ring-1 ring-black ring-opacity-5">
+              <div className="absolute z-10 mt-1 w-64 bg-card rounded-md shadow-lg ring-1 ring-black ring-opacity-5">
                 <div className="py-1">
                   <button
                     onClick={() => {
@@ -167,21 +173,41 @@ const Products: React.FC = () => {
                     {categoryType === "bite" && selectedCategory === null && <Check size={16} />}
                   </button>
                   
-                  {/* Bite subcategories */}
-                  {biteCategories.map((category) => (
-                    <button
-                      key={category}
-                      onClick={() => {
-                        setCategoryType("bite");
-                        setSelectedCategory(category);
-                        setIsCategoryOpen(false);
-                      }}
-                      className="flex items-center justify-between w-full px-4 py-2 text-sm text-left hover:bg-muted/50 pl-8"
-                    >
-                      <span>{category}</span>
-                      {categoryType === "bite" && selectedCategory === category && <Check size={16} />}
-                    </button>
-                  ))}
+                  {/* Bite subcategories with appropriate icons */}
+                  {biteCategories.map((category) => {
+                    let icon;
+                    if (category.includes("Chicken")) {
+                      icon = <Chicken size={16} className="mr-2" />;
+                    } else if (category.includes("Fish")) {
+                      icon = <Fish size={16} className="mr-2" />;
+                    } else if (category.includes("Vegetable")) {
+                      icon = <Carrot size={16} className="mr-2" />;
+                    } else if (category.includes("Cake")) {
+                      icon = <Cake size={16} className="mr-2" />;
+                    } else if (category.includes("Cutlet")) {
+                      icon = <Cutlet size={16} className="mr-2" />;
+                    } else {
+                      icon = null;
+                    }
+                    
+                    return (
+                      <button
+                        key={category}
+                        onClick={() => {
+                          setCategoryType("bite");
+                          setSelectedCategory(category);
+                          setIsCategoryOpen(false);
+                        }}
+                        className="flex items-center justify-between w-full px-4 py-2 text-sm text-left hover:bg-muted/50 pl-8"
+                      >
+                        <div className="flex items-center">
+                          {icon}
+                          <span>{category}</span>
+                        </div>
+                        {categoryType === "bite" && selectedCategory === category && <Check size={16} />}
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
             )}
