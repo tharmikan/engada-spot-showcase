@@ -1,45 +1,13 @@
 # Welcome to EngadaSpot!
+Welcome to the Official Website of Engada Spot — your go-to destination for everything chai and beyond. Our website is thoughtfully designed to showcase the unique essence of our chai shop, featuring a complete and visually rich presentation of our menu, including signature chai blends, snacks, and exclusive in-house products. Whether you're a long-time customer or a first-time visitor, you'll enjoy a seamless, intuitive, and fully responsive browsing experience across all devices.
+
+At Engada Spot, we believe in creating more than just tea — we craft moments. Our site reflects that philosophy by offering engaging visuals, easy navigation, and up-to-date information about our latest offerings, promotions, and events. From traditional brews to modern twists, discover what makes Engada Spot a beloved hangout for chai lovers.
+
+Come explore, get inspired, and place your next order — all from the comfort of your phone or desktop.
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/7e834506-e608-4037-8c00-1ffc78275f5a
-
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+**URL**: https://engada-spot-showcase.lovable.app/
 
 ## What technologies are used for this project?
 
@@ -51,10 +19,4 @@ This project is built with .
 - shadcn-ui
 - Tailwind CSS
 
-## How can I deploy this project?
 
-Simply open [Lovable](https://lovable.dev/projects/7e834506-e608-4037-8c00-1ffc78275f5a) and click on Share -> Publish.
-
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
