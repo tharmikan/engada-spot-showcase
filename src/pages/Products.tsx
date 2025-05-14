@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ProductCard from "@/components/ProductCard";
 import { products } from "@/lib/products";
-import { Check, ChevronDown, CupSoda, Chicken, Fish, Carrot, Cake, Cutlet } from "lucide-react";
+import { Check, ChevronDown, CupSoda, Beef, Fish2, Carrot, Cake, UtensilsCrossed } from "lucide-react";
 
 const Products: React.FC = () => {
   const [filteredProducts, setFilteredProducts] = useState(products);
@@ -177,15 +177,15 @@ const Products: React.FC = () => {
                   {biteCategories.map((category) => {
                     let icon;
                     if (category.includes("Chicken")) {
-                      icon = <Chicken size={16} className="mr-2" />;
+                      icon = <Beef size={16} className="mr-2" />;
                     } else if (category.includes("Fish")) {
-                      icon = <Fish size={16} className="mr-2" />;
+                      icon = <Fish2 size={16} className="mr-2" />;
                     } else if (category.includes("Vegetable")) {
                       icon = <Carrot size={16} className="mr-2" />;
                     } else if (category.includes("Cake")) {
                       icon = <Cake size={16} className="mr-2" />;
                     } else if (category.includes("Cutlet")) {
-                      icon = <Cutlet size={16} className="mr-2" />;
+                      icon = <UtensilsCrossed size={16} className="mr-2" />;
                     } else {
                       icon = null;
                     }
