@@ -91,6 +91,18 @@ const allProducts: Product[] = [
   },
   {
     id: "product-7",
+    name: "Cassava Chips",
+    category: "Casava chips",
+    price: 100,
+    imageSrc: "/lovable-uploads/cee28ed1-c76a-4322-8be8-a1c2f711d1ae.png",
+    description: "Our crispy Cassava Chips are made from fresh cassava roots, thinly sliced and perfectly fried to a golden crunch. Served with a delicious dipping sauce, these chips make for an irresistible snack that pairs wonderfully with our beverages.",
+    featured: true,
+    details: {
+      features: ["Made from fresh cassava", "Perfectly crispy", "Low oil content", "Great with dips"]
+    }
+  },
+  {
+    id: "product-8",
     name: "Artisanal Ceramic Vase",
     category: "Home Decor",
     price: 79.99,
@@ -105,7 +117,7 @@ const allProducts: Product[] = [
     }
   },
   {
-    id: "product-8",
+    id: "product-9",
     name: "Minimalist Table Lamp",
     category: "Lighting",
     price: 129.99,
@@ -120,7 +132,7 @@ const allProducts: Product[] = [
     }
   },
   {
-    id: "product-9",
+    id: "product-10",
     name: "Organic Cotton Throw",
     category: "Textiles",
     price: 89.99,
