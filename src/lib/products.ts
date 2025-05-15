@@ -32,7 +32,7 @@ const allProducts: Product[] = [
   {
     id: "product-2",
     name: "Masala Chai",
-    category: "Tea",
+    category: "Masala chai",
     price: 2.99,
     imageSrc: "https://images.unsplash.com/photo-1571934811356-5cc061b6821f?auto=format&fit=crop&q=80&w=800&h=800",
     description: "Our authentic Masala Chai combines premium black tea with a perfect blend of aromatic spices including cardamom, cinnamon, ginger, and cloves. Brewed to perfection and served hot with just the right amount of sweetness for a truly comforting experience.",
@@ -44,7 +44,7 @@ const allProducts: Product[] = [
   {
     id: "product-3",
     name: "Egg Coffee",
-    category: "Coffee",
+    category: "Egg coffee",
     price: 3.99,
     imageSrc: "https://images.unsplash.com/photo-1610889556528-9a770e32642f?auto=format&fit=crop&q=80&w=800&h=800",
     description: "Our specialty Egg Coffee is a delightful surprise for coffee enthusiasts. This unique beverage features rich, freshly brewed coffee topped with a creamy, custard-like layer made from whisked egg yolks and condensed milk, creating a luxurious treat that's both sweet and robust.",
@@ -56,7 +56,7 @@ const allProducts: Product[] = [
   {
     id: "product-4",
     name: "Fish Rolls",
-    category: "Rolls",
+    category: "Fish Rolls",
     price: 100,
     imageSrc: "/lovable-uploads/52df5f5f-ad49-4abf-b70c-c0ce12f499b3.png",
     description: "Our delicious Fish Rolls are carefully prepared with fresh fish fillings, wrapped in a crispy golden coating, and served hot for a satisfying snack or accompaniment to your favorite tea.",
@@ -68,7 +68,7 @@ const allProducts: Product[] = [
   {
     id: "product-5",
     name: "Chicken Rolls",
-    category: "Rolls",
+    category: "Chicken Rolls",
     price: 100,
     imageSrc: "/lovable-uploads/5257e0e9-eb38-4e90-9ed6-aadd2c6dbb2a.png",
     description: "Our tasty Chicken Rolls feature tender chicken pieces with aromatic spices, wrapped in a crispy golden coating. Perfect for a satisfying snack or as an accompaniment to your favorite tea.",
@@ -80,7 +80,7 @@ const allProducts: Product[] = [
   {
     id: "product-6",
     name: "Vegetable Rolls",
-    category: "Rolls",
+    category: "Vegetable Rolls",
     price: 80,
     imageSrc: "/lovable-uploads/0a45cb8e-1148-4ea1-a83d-a1aaefef8253.png",
     description: "Our Vegetable Rolls combine a medley of fresh vegetables and aromatic spices, wrapped in a crispy golden coating. A delicious vegetarian option that pairs perfectly with your favorite tea.",

@@ -19,8 +19,9 @@ const Products: React.FC = () => {
   // Categorize products into "To Drink" and "To Bite"
   const drinkCategories = ["Masala chai", "Cardamon chai", "Milk coffee", "Egg coffee", "Ginger plain tea"];
   
+  // Fixed category names to match exactly with the product data
   const biteCategories = [
-    "Chicken rolls", 
+    "Chicken Rolls", 
     "Fish Rolls", 
     "Vegetable Rolls", 
     "Casava chips", 
@@ -88,6 +89,14 @@ const Products: React.FC = () => {
     
     return () => observer.disconnect();
   }, []);
+  
+  // Add debug log to help diagnose filter issues
+  console.log({
+    selectedCategory,
+    categoryType,
+    filteredProductsCount: filteredProducts.length,
+    availableCategories: products.map(p => p.category)
+  });
   
   return (
     <div className="pt-20 md:pt-28 pb-20">
