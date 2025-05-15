@@ -55,18 +55,42 @@ const allProducts: Product[] = [
   },
   {
     id: "product-4",
-    name: "Assorted Rolls",
+    name: "Fish Rolls",
     category: "Rolls",
-    price: 5.99,
-    imageSrc: "https://images.unsplash.com/photo-1603532648955-039310d9ed75?auto=format&fit=crop&q=80&w=800&h=800",
-    description: "Our delicious selection of freshly made rolls includes Vegetable, Fish, and Chicken varieties. Each roll is carefully prepared with aromatic spices, wrapped in a crispy golden coating, and served hot for a satisfying snack or accompaniment to your favorite tea.",
+    price: 100,
+    imageSrc: "/lovable-uploads/52df5f5f-ad49-4abf-b70c-c0ce12f499b3.png",
+    description: "Our delicious Fish Rolls are carefully prepared with fresh fish fillings, wrapped in a crispy golden coating, and served hot for a satisfying snack or accompaniment to your favorite tea.",
     featured: true,
     details: {
-      features: ["Three varieties: Veg, Fish, and Chicken", "Made fresh daily", "Crispy exterior", "Aromatic spices"]
+      features: ["Made fresh daily", "Crispy exterior", "Aromatic spices", "Premium fish filling"]
     }
   },
   {
     id: "product-5",
+    name: "Chicken Rolls",
+    category: "Rolls",
+    price: 100,
+    imageSrc: "/lovable-uploads/5257e0e9-eb38-4e90-9ed6-aadd2c6dbb2a.png",
+    description: "Our tasty Chicken Rolls feature tender chicken pieces with aromatic spices, wrapped in a crispy golden coating. Perfect for a satisfying snack or as an accompaniment to your favorite tea.",
+    featured: true,
+    details: {
+      features: ["Made fresh daily", "Crispy exterior", "Premium chicken filling", "Perfect blend of spices"]
+    }
+  },
+  {
+    id: "product-6",
+    name: "Vegetable Rolls",
+    category: "Rolls",
+    price: 80,
+    imageSrc: "/lovable-uploads/0a45cb8e-1148-4ea1-a83d-a1aaefef8253.png",
+    description: "Our Vegetable Rolls combine a medley of fresh vegetables and aromatic spices, wrapped in a crispy golden coating. A delicious vegetarian option that pairs perfectly with your favorite tea.",
+    featured: true,
+    details: {
+      features: ["Made fresh daily", "Crispy exterior", "Fresh vegetable filling", "Aromatic spices"]
+    }
+  },
+  {
+    id: "product-7",
     name: "Artisanal Ceramic Vase",
     category: "Home Decor",
     price: 79.99,
@@ -81,7 +105,7 @@ const allProducts: Product[] = [
     }
   },
   {
-    id: "product-6",
+    id: "product-8",
     name: "Minimalist Table Lamp",
     category: "Lighting",
     price: 129.99,
@@ -96,7 +120,7 @@ const allProducts: Product[] = [
     }
   },
   {
-    id: "product-7",
+    id: "product-9",
     name: "Organic Cotton Throw",
     category: "Textiles",
     price: 89.99,
