@@ -1,22 +1,8 @@
 
-export interface Product {
-  id: string;
-  name: string;
-  category: string;
-  price: number;
-  imageSrc: string;
-  description: string;
-  featured: boolean;
-  details: {
-    dimensions?: string;
-    materials?: string;
-    colors?: string[];
-    features?: string[];
-  };
-}
+import { ProductType } from "@/types/product";
 
 // Original products array but we'll filter out home decor items when exporting
-const allProducts: Product[] = [
+const allProducts: ProductType[] = [
   {
     id: "product-1",
     name: "Spot Cake",
@@ -111,7 +97,7 @@ const allProducts: Product[] = [
     featured: false,
     details: {
       dimensions: "8\" diameter x 12\" height",
-      materials: "Hand-thrown ceramic",
+      materials: ["Hand-thrown ceramic"],
       colors: ["Matte White", "Sea Blue", "Terracotta"],
       features: ["Waterproof interior", "Handmade", "Unique glaze variations", "Stable base"]
     }
@@ -149,19 +135,19 @@ const allProducts: Product[] = [
 ];
 
 // Export only tea-related products (excluding home decor items)
-export const products: Product[] = allProducts.filter(product => 
+export const products: ProductType[] = allProducts.filter(product => 
   !["Home Decor", "Lighting", "Textiles"].includes(product.category)
 );
 
-export function getFeaturedProducts(): Product[] {
+export function getFeaturedProducts(): ProductType[] {
   return products.filter(product => product.featured);
 }
 
-export function getProductById(id: string): Product | undefined {
+export function getProductById(id: string): ProductType | undefined {
   return products.find(product => product.id === id);
 }
 
-export function getRelatedProducts(id: string, limit: number = 3): Product[] {
+export function getRelatedProducts(id: string, limit: number = 3): ProductType[] {
   const product = getProductById(id);
   if (!product) return [];
   

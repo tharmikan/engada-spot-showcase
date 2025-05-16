@@ -11,7 +11,8 @@ export interface ProductType {
     features?: string[];
     dimensions?: string;
     weight?: string;
-    materials?: string[];
+    materials?: string | string[];
     origin?: string;
+    colors?: string[];
   };
 }
