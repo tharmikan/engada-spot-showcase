@@ -24,9 +24,7 @@ const Products: React.FC = () => {
     "Fish Rolls", 
     "Vegetable Rolls", 
     "Casava chips", 
-    "Badam Spot Cake", 
-    "Mango spot cake", 
-    "Rose milk spot cake", 
+    "Cakes", 
     "Cutlet"
   ];
   
@@ -63,14 +61,6 @@ const Products: React.FC = () => {
     
     setFilteredProducts(result);
   }, [categoryType, selectedCategory, sortOption]);
-
-  // Add debug log to help diagnose filter issues
-  console.log({
-    selectedCategory,
-    categoryType,
-    filteredProductsCount: filteredProducts.length,
-    availableCategories: products.map(p => p.category)
-  });
   
   return (
     <div className="pt-20 md:pt-28 pb-20">

@@ -39,7 +39,7 @@ const CategoryFilter: React.FC<CategoryFilterProps> = ({
       </button>
       
       {isCategoryOpen && (
-        <div className="absolute z-10 mt-1 w-64 bg-card rounded-md shadow-lg ring-1 ring-black ring-opacity-5">
+        <div className="absolute z-10 mt-1 w-64 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5">
           <div className="py-1">
             <button
               onClick={() => {

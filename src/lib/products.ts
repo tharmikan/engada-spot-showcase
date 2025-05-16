@@ -19,8 +19,8 @@ const allProducts: ProductType[] = [
     id: "product-2",
     name: "Masala Chai",
     category: "Masala chai",
-    price: 2.99,
-    imageSrc: "https://images.unsplash.com/photo-1571934811356-5cc061b6821f?auto=format&fit=crop&q=80&w=800&h=800",
+    price: 200, // Updated price to 200 Rs
+    imageSrc: "/lovable-uploads/5fd739d2-838b-479c-ac3f-8d1be592c9d4.png", // Updated image to first uploaded image
     description: "Our authentic Masala Chai combines premium black tea with a perfect blend of aromatic spices including cardamom, cinnamon, ginger, and cloves. Brewed to perfection and served hot with just the right amount of sweetness for a truly comforting experience.",
     featured: true,
     details: {
@@ -89,6 +89,30 @@ const allProducts: ProductType[] = [
   },
   {
     id: "product-8",
+    name: "Cardamon Chai",
+    category: "Cardamon chai",
+    price: 150, // Set price to 150 Rs
+    imageSrc: "/lovable-uploads/d30d27fa-d5f4-4c90-bc7d-b0ec4aa7dc60.png", // Second uploaded image
+    description: "Our aromatic Cardamon Chai is a delicate blend of premium tea leaves and freshly ground cardamon, creating a fragrant and soothing beverage. Served in traditional clay cups for an authentic experience.",
+    featured: true,
+    details: {
+      features: ["Premium cardamon blend", "Freshly brewed", "Aromatic flavor", "Traditional recipe"]
+    }
+  },
+  {
+    id: "product-9",
+    name: "Milk Coffee",
+    category: "Milk coffee",
+    price: 100, // Set price to 100 Rs
+    imageSrc: "/lovable-uploads/7e91d90d-f1b1-4107-a4c5-e41d41dd9abb.png", // Third uploaded image
+    description: "Our rich and creamy Milk Coffee is made with freshly brewed coffee and topped with the perfect amount of creamy milk. Served in traditional clay cups for an authentic experience.",
+    featured: true,
+    details: {
+      features: ["Rich flavor", "Creamy texture", "Freshly brewed", "Perfect milk-to-coffee ratio"]
+    }
+  },
+  {
+    id: "product-10",
     name: "Artisanal Ceramic Vase",
     category: "Home Decor",
     price: 79.99,
@@ -103,7 +127,7 @@ const allProducts: ProductType[] = [
     }
   },
   {
-    id: "product-9",
+    id: "product-11",
     name: "Minimalist Table Lamp",
     category: "Lighting",
     price: 129.99,
@@ -118,7 +142,7 @@ const allProducts: ProductType[] = [
     }
   },
   {
-    id: "product-10",
+    id: "product-12",
     name: "Organic Cotton Throw",
     category: "Textiles",
     price: 89.99,
