@@ -20,7 +20,7 @@ const allProducts: ProductType[] = [
     name: "Masala Chai",
     category: "Masala chai",
     price: 200, // Updated price to 200 Rs
-    imageSrc: "/lovable-uploads/5fd739d2-838b-479c-ac3f-8d1be592c9d4.png", // Updated image to first uploaded image
+    imageSrc: "/lovable-uploads/7e91d90d-f1b1-4107-a4c5-e41d41dd9abb.png", // Now using Milk Coffee image
     description: "Our authentic Masala Chai combines premium black tea with a perfect blend of aromatic spices including cardamom, cinnamon, ginger, and cloves. Brewed to perfection and served hot with just the right amount of sweetness for a truly comforting experience.",
     featured: true,
     details: {
@@ -104,7 +104,7 @@ const allProducts: ProductType[] = [
     name: "Milk Coffee",
     category: "Milk coffee",
     price: 100, // Set price to 100 Rs
-    imageSrc: "/lovable-uploads/7e91d90d-f1b1-4107-a4c5-e41d41dd9abb.png", // Third uploaded image
+    imageSrc: "/lovable-uploads/5fd739d2-838b-479c-ac3f-8d1be592c9d4.png", // Now using Masala Chai image
     description: "Our rich and creamy Milk Coffee is made with freshly brewed coffee and topped with the perfect amount of creamy milk. Served in traditional clay cups for an authentic experience.",
     featured: true,
     details: {
