@@ -10,9 +10,16 @@ const ProductDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const [isImageLoaded, setIsImageLoaded] = useState(false);
+  const [imageKey, setImageKey] = useState(Date.now());
   
   const product = id ? getProductById(id) : undefined;
   const relatedProducts = id ? getRelatedProducts(id) : [];
+  
+  // Reset image cache when product ID changes
+  useEffect(() => {
+    setIsImageLoaded(false);
+    setImageKey(Date.now());
+  }, [id]);
   
   useEffect(() => {
     // Redirect if product not found
@@ -45,7 +52,7 @@ const ProductDetail: React.FC = () => {
       {/* Product Details */}
       <section className="container mx-auto container-padding mb-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
-          {/* Product Image */}
+          {/* Product Image with cache-busting */}
           <div className="relative aspect-square bg-muted rounded-lg overflow-hidden">
             {!isImageLoaded && (
               <div className="absolute inset-0 flex items-center justify-center bg-muted">
@@ -53,7 +60,7 @@ const ProductDetail: React.FC = () => {
               </div>
             )}
             <img 
-              src={product.imageSrc} 
+              src={`${product.imageSrc}?v=${imageKey}`}
               alt={product.name} 
               className={`w-full h-full object-cover transition-opacity duration-500 ${isImageLoaded ? 'opacity-100' : 'opacity-0'}`}
               onLoad={() => setIsImageLoaded(true)}
@@ -141,7 +148,7 @@ const ProductDetail: React.FC = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
               {relatedProducts.map((product) => (
                 <ProductCard
-                  key={product.id}
+                  key={`${product.id}-${Date.now()}`} // Add unique key with timestamp
                   id={product.id}
                   name={product.name}
                   category={product.category}

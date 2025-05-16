@@ -1,5 +1,5 @@
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Eye, CupSoda, Coffee, Utensils, CakeSlice } from "lucide-react";
 
@@ -19,6 +19,12 @@ const ProductCard: React.FC<ProductCardProps> = ({
   imageSrc 
 }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const [imageKey, setImageKey] = useState(Date.now());
+  
+  // Reset image cache when props change
+  useEffect(() => {
+    setImageKey(Date.now());
+  }, [id, imageSrc]);
   
   // Choose icon based on category
   const renderIcon = () => {
@@ -40,10 +46,10 @@ const ProductCard: React.FC<ProductCardProps> = ({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Image */}
+      {/* Image with key to force reload */}
       <div className="aspect-square overflow-hidden bg-muted">
         <img 
-          src={imageSrc} 
+          src={`${imageSrc}?v=${imageKey}`}
           alt={name} 
           className={`w-full h-full object-cover transition-transform duration-700 ${
             isHovered ? "scale-110" : "scale-100"
