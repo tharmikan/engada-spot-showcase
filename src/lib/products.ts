@@ -31,8 +31,8 @@ const allProducts: ProductType[] = [
     id: "product-3",
     name: "Egg Coffee",
     category: "Egg coffee",
-    price: 3.99,
-    imageSrc: "https://images.unsplash.com/photo-1610889556528-9a770e32642f?auto=format&fit=crop&q=80&w=800&h=800",
+    price: 150, // Updated price to 150 Rs
+    imageSrc: "/lovable-uploads/a86e72b8-53f1-4931-8640-bcbe00830696.png", // First uploaded image (egg coffee)
     description: "Our specialty Egg Coffee is a delightful surprise for coffee enthusiasts. This unique beverage features rich, freshly brewed coffee topped with a creamy, custard-like layer made from whisked egg yolks and condensed milk, creating a luxurious treat that's both sweet and robust.",
     featured: true,
     details: {
@@ -109,6 +109,18 @@ const allProducts: ProductType[] = [
     featured: true,
     details: {
       features: ["Rich flavor", "Creamy texture", "Freshly brewed", "Perfect milk-to-coffee ratio"]
+    }
+  },
+  {
+    id: "product-13",
+    name: "Ginger Plain Tea",
+    category: "Ginger plain tea",
+    price: 60, // Set price to 60 Rs
+    imageSrc: "/lovable-uploads/cd12bf26-6cc9-4873-bc3a-03c81a2e7f2f.png", // Second uploaded image (ginger tea)
+    description: "Our Ginger Plain Tea offers a perfect balance of fresh ginger and premium tea leaves, creating a warming beverage that soothes the senses. Each cup is brewed to perfection with hints of lemon and mint for a refreshing finish.",
+    featured: true,
+    details: {
+      features: ["Fresh ginger infusion", "Soothing properties", "Natural ingredients", "Perfect winter warmer"]
     }
   },
   {
