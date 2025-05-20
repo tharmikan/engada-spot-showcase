@@ -124,6 +124,18 @@ const allProducts: ProductType[] = [
     }
   },
   {
+    id: "product-14",
+    name: "Badam Spot Cake",
+    category: "Cakes",
+    price: 300,
+    imageSrc: "/lovable-uploads/a2a2f17c-3c3b-4482-b46e-a8338e7235ba.png",
+    description: "Our Badam Spot Cake is a delicious almond-flavored treat, topped with a rich frosting and garnished with crushed pistachios and rose petals. Served in a pool of sweet syrup, it offers a perfect balance of nutty flavors and delicate sweetness.",
+    featured: true,
+    details: {
+      features: ["Almond flavored", "Handcrafted decoration", "Rich texture", "Traditional recipe with modern twist"]
+    }
+  },
+  {
     id: "product-10",
     name: "Artisanal Ceramic Vase",
     category: "Home Decor",
