@@ -1,7 +1,7 @@
 
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Eye, CupSoda, Coffee, Utensils, CakeSlice } from "lucide-react";
+import { Eye, CupSoda, Coffee, Utensils, CakeSlice, IceCream } from "lucide-react";
 
 interface ProductCardProps {
   id: string;
@@ -30,6 +30,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
       return <CakeSlice size={18} className="text-tea-green" />;
     } else if (category.toLowerCase().includes('roll')) {
       return <Utensils size={18} className="text-tea-green" />;
+    } else if (category.toLowerCase().includes('dessert')) {
+      return <IceCream size={18} className="text-tea-green" />;
     }
     return null;
   };

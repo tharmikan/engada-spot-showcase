@@ -136,6 +136,42 @@ const allProducts: ProductType[] = [
     }
   },
   {
+    id: "product-15",
+    name: "Rose Milk Spot Cake",
+    category: "Cakes",
+    price: 300,
+    imageSrc: "/lovable-uploads/5402885c-e6b8-48df-9b68-1f9216c40f33.png",
+    description: "Our Rose Milk Spot Cake features a vibrant pink sponge infused with rose essence, topped with creamy white frosting and garnished with crushed pistachios. Served with a drizzle of rose milk syrup for an extra touch of indulgence.",
+    featured: true,
+    details: {
+      features: ["Rose flavored", "Vibrant color", "Creamy frosting", "Garnished with pistachios"]
+    }
+  },
+  {
+    id: "product-16",
+    name: "Mango Spot Cake",
+    category: "Cakes",
+    price: 300,
+    imageSrc: "/lovable-uploads/6779a2cb-14ac-4f66-a4bc-6eb191e064a0.png",
+    description: "Our Mango Spot Cake combines the tropical sweetness of ripe mangoes with a light, fluffy sponge. Topped with smooth cream frosting and fresh mango slices, this dessert brings the taste of summer to your table year-round.",
+    featured: true,
+    details: {
+      features: ["Fresh mango flavor", "Light sponge texture", "Cream frosting", "Seasonal favorite"]
+    }
+  },
+  {
+    id: "product-17",
+    name: "Sorkkam",
+    category: "Desserts",
+    price: 500,
+    imageSrc: "/lovable-uploads/0f910aac-2070-45b3-96d2-50a5e016f10d.png",
+    description: "Sorkkam is our premium chocolate dessert featuring a warm, rich chocolate cake with a molten center. Served with vanilla ice cream and topped with a decadent chocolate sauce, this indulgent treat provides the perfect balance of temperatures and textures.",
+    featured: true,
+    details: {
+      features: ["Molten chocolate center", "Warm served", "Premium cocoa", "Indulgent dessert experience"]
+    }
+  },
+  {
     id: "product-10",
     name: "Artisanal Ceramic Vase",
     category: "Home Decor",

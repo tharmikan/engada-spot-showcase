@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import { products } from "@/lib/products";
 import CategoryFilter from "@/components/products/CategoryFilter";
@@ -19,14 +18,15 @@ const Products: React.FC = () => {
   // Categorize products into "To Drink" and "To Bite"
   const drinkCategories = ["Masala chai", "Cardamon chai", "Milk coffee", "Egg coffee", "Ginger plain tea"];
   
-  // Fixed category names to match exactly with the product data
+  // Fixed category names to match exactly with the product data and added "Desserts"
   const biteCategories = [
     "Chicken Rolls", 
     "Fish Rolls", 
     "Vegetable Rolls", 
     "Casava chips", 
     "Cakes", 
-    "Cutlet"
+    "Cutlet",
+    "Desserts"
   ];
   
   // Handle category change
