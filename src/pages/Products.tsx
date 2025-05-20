@@ -14,6 +14,7 @@ const Products: React.FC = () => {
   const [sortOption, setSortOption] = useState<string>("newest");
   const [isSortOpen, setIsSortOpen] = useState(false);
   const [categoryType, setCategoryType] = useState<"drink" | "bite" | null>(null);
+  const [renderKey, setRenderKey] = useState<number>(0);
   
   // Categorize products into "To Drink" and "To Bite"
   const drinkCategories = ["Masala chai", "Cardamon chai", "Milk coffee", "Egg coffee", "Ginger plain tea"];
@@ -30,11 +31,14 @@ const Products: React.FC = () => {
   
   // Handle category change
   const handleCategoryChange = (category: string | null, type: "drink" | "bite" | null) => {
+    console.log("Category changed:", { category, type });
     setSelectedCategory(category);
     setCategoryType(type);
+    setRenderKey(prev => prev + 1); // Force re-render
   };
 
   useEffect(() => {
+    console.log("Filtering products with:", { categoryType, selectedCategory, sortOption });
     let result = [...products];
     
     // Apply category type filter first (To Drink or To Bite)
@@ -65,6 +69,7 @@ const Products: React.FC = () => {
         break;
     }
     
+    console.log("Filtered products:", result);
     setFilteredProducts(result);
   }, [categoryType, selectedCategory, sortOption]);
   
@@ -96,12 +101,15 @@ const Products: React.FC = () => {
             isSortOpen={isSortOpen}
             setIsSortOpen={setIsSortOpen}
             sortOption={sortOption}
-            setSortOption={setSortOption}
+            setSortOption={(sort) => {
+              setSortOption(sort);
+              setRenderKey(prev => prev + 1); // Force re-render on sort change
+            }}
           />
         </div>
         
         <ProductsGrid 
-          key={`${categoryType || "all"}-${selectedCategory || "all"}-${sortOption}`}
+          key={`grid-${renderKey}-${categoryType || "all"}-${selectedCategory || "all"}-${sortOption}`}
           filteredProducts={filteredProducts}
           categoryType={categoryType}
           selectedCategory={selectedCategory}

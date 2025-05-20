@@ -22,7 +22,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
   
   // Choose icon based on category
   const renderIcon = () => {
-    if (category.toLowerCase().includes('tea')) {
+    if (category.toLowerCase().includes('tea') || category.toLowerCase().includes('chai')) {
       return <CupSoda size={18} className="text-tea-green" />;
     } else if (category.toLowerCase().includes('coffee')) {
       return <Coffee size={18} className="text-tea-green" />;
@@ -40,10 +40,10 @@ const ProductCard: React.FC<ProductCardProps> = ({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Image */}
+      {/* Image with random query param to prevent caching */}
       <div className="aspect-square overflow-hidden bg-muted">
         <img 
-          src={`${imageSrc}?v=${new Date().getTime()}`}
+          src={`${imageSrc}?v=${id}`}
           alt={name} 
           className={`w-full h-full object-cover transition-transform duration-700 ${
             isHovered ? "scale-110" : "scale-100"
