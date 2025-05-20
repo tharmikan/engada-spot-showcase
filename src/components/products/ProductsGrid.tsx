@@ -15,7 +15,7 @@ const ProductsGrid: React.FC<ProductsGridProps> = ({
   selectedCategory 
 }) => {
   return (
-    <>
+    <div className="mb-12">
       {/* Results Count */}
       <div className="mb-8 text-sm text-muted-foreground">
         Showing {filteredProducts.length} {filteredProducts.length === 1 ? "product" : "products"}
@@ -32,7 +32,7 @@ const ProductsGrid: React.FC<ProductsGridProps> = ({
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
           {filteredProducts.map((product) => (
             <ProductCard
-              key={product.id}
+              key={`${product.id}-${categoryType}`}
               id={product.id}
               name={product.name}
               category={product.category}
@@ -42,7 +42,7 @@ const ProductsGrid: React.FC<ProductsGridProps> = ({
           ))}
         </div>
       )}
-    </>
+    </div>
   );
 };
 

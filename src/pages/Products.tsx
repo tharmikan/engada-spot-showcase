@@ -14,7 +14,6 @@ const Products: React.FC = () => {
   const [sortOption, setSortOption] = useState<string>("newest");
   const [isSortOpen, setIsSortOpen] = useState(false);
   const [categoryType, setCategoryType] = useState<"drink" | "bite" | null>(null);
-  const [key, setKey] = useState<number>(0); // Add a key to force re-render
   
   // Categorize products into "To Drink" and "To Bite"
   const drinkCategories = ["Masala chai", "Cardamon chai", "Milk coffee", "Egg coffee", "Ginger plain tea"];
@@ -33,7 +32,6 @@ const Products: React.FC = () => {
   const handleCategoryChange = (category: string | null, type: "drink" | "bite" | null) => {
     setSelectedCategory(category);
     setCategoryType(type);
-    setKey(prevKey => prevKey + 1); // Increment key to force re-render
   };
 
   useEffect(() => {
@@ -103,7 +101,7 @@ const Products: React.FC = () => {
         </div>
         
         <ProductsGrid 
-          key={key} // Add key to force re-render when products change
+          key={`${categoryType || "all"}-${selectedCategory || "all"}-${sortOption}`}
           filteredProducts={filteredProducts}
           categoryType={categoryType}
           selectedCategory={selectedCategory}
