@@ -1,3 +1,4 @@
+
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Hero from "@/components/Hero";
@@ -6,7 +7,8 @@ import { getFeaturedProducts } from "@/lib/products";
 import { ArrowRight, CupSoda, Coffee, Utensils, CakeSlice, Soup } from "lucide-react";
 
 const Index: React.FC = () => {
-  const featuredProducts = getFeaturedProducts();
+  // Get featured products and limit to 4
+  const featuredProducts = getFeaturedProducts().slice(0, 4);
 
   useEffect(() => {
     // Animation for category cards
@@ -75,7 +77,7 @@ const Index: React.FC = () => {
         </div>
       </section>
       
-      {/* Featured Products */}
+      {/* Featured Products - Limited to 4 */}
       <section className="section-padding">
         <div className="container mx-auto container-padding">
           <div className="mb-12 text-center">
@@ -83,7 +85,7 @@ const Index: React.FC = () => {
             <h2 className="text-3xl md:text-4xl font-semibold mt-2 text-tea-green">Customer Favorites</h2>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 md:gap-12">
             {featuredProducts.map((product) => (
               <ProductCard
                 key={product.id}
