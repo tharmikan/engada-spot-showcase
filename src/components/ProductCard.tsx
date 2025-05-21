@@ -93,9 +93,9 @@ const ProductCard: React.FC<ProductCardProps> = ({
         </div>
       </div>
 
-      {/* Product Details Dialog */}
+      {/* Product Details Dialog - Improved for better positioning */}
       <Dialog open={showDialog} onOpenChange={setShowDialog}>
-        <DialogContent className="sm:max-w-[500px]">
+        <DialogContent className="sm:max-w-[600px] w-[95vw] my-8 max-h-[90vh] overflow-y-auto fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50">
           <DialogHeader>
             <DialogTitle className="text-2xl text-tea-green">{name}</DialogTitle>
           </DialogHeader>
